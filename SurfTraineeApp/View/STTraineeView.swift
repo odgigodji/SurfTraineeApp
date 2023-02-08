@@ -10,7 +10,6 @@ import UIKit
 class STTraineeView: UIView {
 
     var imageView = UIImageView(image: UIImage(named: "background"))
-    
     var whiteView = UIView()
     
     var label = UILabel()
@@ -20,7 +19,7 @@ class STTraineeView: UIView {
         
         configureImageView()
         configureMainView()
-//        configureLabel()
+        configureLabel()
         
 //        NSLayoutConstraint.activate([
 //            heightAnchor.constraint(equalToConstant: 1000),
@@ -66,11 +65,13 @@ class STTraineeView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            label.bottomAnchor.constraint(equalTo: whiteView.bottomAnchor),
+            label.topAnchor.constraint(equalTo: whiteView.topAnchor, constant: 20),
             label.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
         
-        label.font = UIFont.systemFont(ofSize: 25)
-        label.text = "her"
+//        label.font = UIFont.systemFont(ofSize: 32)
+//        label.font = UIFont.boldSystemFont(ofSize: 32)
+        label.font =  Fonts.bold24
+        label.text = "Cтажировка в Surf"
     }
 }

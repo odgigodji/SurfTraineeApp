@@ -17,6 +17,10 @@
 		FAC8147F2912EBB4006B3130 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8147E2912EBB4006B3130 /* Assembly.swift */; };
 		FAC814952913B416006B3130 /* PresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC814932913B416006B3130 /* PresenterOutput.swift */; };
 		FAE416882993D3A4000484E3 /* STTraineeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE416872993D3A4000484E3 /* STTraineeView.swift */; };
+		FAE4168C29941085000484E3 /* UIView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4168B29941085000484E3 /* UIView + Ext.swift */; };
+		FAE4168E2994142A000484E3 /* STLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4168D2994142A000484E3 /* STLabel.swift */; };
+		FAE4169129941765000484E3 /* DefaultLabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4169029941765000484E3 /* DefaultLabelFactory.swift */; };
+		FAE4169429941814000484E3 /* STFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4169329941814000484E3 /* STFonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,10 @@
 		FAC814932913B416006B3130 /* PresenterOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterOutput.swift; sourceTree = "<group>"; };
 		FAE416862993C62E000484E3 /* goals.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = goals.md; sourceTree = "<group>"; };
 		FAE416872993D3A4000484E3 /* STTraineeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STTraineeView.swift; sourceTree = "<group>"; };
+		FAE4168B29941085000484E3 /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
+		FAE4168D2994142A000484E3 /* STLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLabel.swift; sourceTree = "<group>"; };
+		FAE4169029941765000484E3 /* DefaultLabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLabelFactory.swift; sourceTree = "<group>"; };
+		FAE4169329941814000484E3 /* STFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STFonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +73,9 @@
 		FA5D5E462912D5AF00066241 /* SurfTraineeApp */ = {
 			isa = PBXGroup;
 			children = (
+				FAE4169229941805000484E3 /* Constants */,
+				FAE4168F2994173F000484E3 /* Factory */,
+				FAE4168A29941042000484E3 /* Extension */,
 				FA5D5E5B2912D5CE00066241 /* Support */,
 				FAC814762912DC63006B3130 /* Model */,
 				FAC814732912DC1C006B3130 /* MainPresenter */,
@@ -117,8 +128,33 @@
 		FAE4168929941010000484E3 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				FAE4168D2994142A000484E3 /* STLabel.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		FAE4168A29941042000484E3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FAE4168B29941085000484E3 /* UIView + Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FAE4168F2994173F000484E3 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				FAE4169029941765000484E3 /* DefaultLabelFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		FAE4169229941805000484E3 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				FAE4169329941814000484E3 /* STFonts.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,14 +227,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA5D5E4C2912D5AF00066241 /* STMainViewController.swift in Sources */,
+				FAE4169429941814000484E3 /* STFonts.swift in Sources */,
 				FAC8147F2912EBB4006B3130 /* Assembly.swift in Sources */,
 				FAC814782912DC6F006B3130 /* DataManager.swift in Sources */,
 				FA5D5E482912D5AF00066241 /* AppDelegate.swift in Sources */,
+				FAE4168C29941085000484E3 /* UIView + Ext.swift in Sources */,
+				FAE4169129941765000484E3 /* DefaultLabelFactory.swift in Sources */,
 				FA5D5E4A2912D5AF00066241 /* SceneDelegate.swift in Sources */,
 				FAE416882993D3A4000484E3 /* STTraineeView.swift in Sources */,
 				FAC814752912DC53006B3130 /* MainViewPresenter.swift in Sources */,
 				FAC814952913B416006B3130 /* PresenterOutput.swift in Sources */,
 				FA1C471B2955FD8B00AEB8FA /* PresenterInput.swift in Sources */,
+				FAE4168E2994142A000484E3 /* STLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
