@@ -20,7 +20,7 @@ class STTraineeView: UIView {
         
         configureImageView()
         configureMainView()
-        configureLabel()
+//        configureLabel()
         
 //        NSLayoutConstraint.activate([
 //            heightAnchor.constraint(equalToConstant: 1000),
@@ -49,7 +49,8 @@ class STTraineeView: UIView {
         whiteView.translatesAutoresizingMaskIntoConstraints = false
         
         whiteView.backgroundColor = .white
-        whiteView.layer.cornerRadius = 0.75
+        whiteView.layer.masksToBounds = true
+        whiteView.layer.cornerRadius = 32
         
         NSLayoutConstraint.activate([
             whiteView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -100),

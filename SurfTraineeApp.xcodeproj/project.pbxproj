@@ -89,6 +89,7 @@
 		FAC814722912DC17006B3130 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FAE4168929941010000484E3 /* CustomView */,
 				FA5D5E4B2912D5AF00066241 /* STMainViewController.swift */,
 				FAE416872993D3A4000484E3 /* STTraineeView.swift */,
 			);
@@ -111,6 +112,13 @@
 				FAC814772912DC6F006B3130 /* DataManager.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FAE4168929941010000484E3 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

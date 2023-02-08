@@ -18,7 +18,7 @@ class STMainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemPink
+//        view.backgroundColor = .systemPink
 
         configureScrollView()
 //        configureImageView()
@@ -36,9 +36,9 @@ class STMainViewController: UIViewController {
         contentView.backgroundColor = .white
 
         NSLayoutConstraint.activate([
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.heightAnchor.constraint(equalToConstant: 2000)
             
@@ -53,11 +53,12 @@ class STMainViewController: UIViewController {
     func configureScrollView() {
         view.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.bounces = false
 //        scrollView.backgroundColor = .yellow
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: -50),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 50),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
