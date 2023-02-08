@@ -10,7 +10,7 @@ import UIKit
 //сборка проходит раньше чем зашрузиться вью контроллер
 class MainAssembly {
     
-    var view                = MainVC()
+    var view                = STMainViewController()
     let presenter           = MainViewPresenter()
     let dataManager         = DataManagerImpl()
     
