@@ -15,20 +15,33 @@ class STMainViewController: UIViewController {
     
     var contentView = STTraineeView(frame: .zero)
     
+    var imageView = UIImageView(image: UIImage(named: "background"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        view = contentView
 //        view.backgroundColor = .systemPink
 
+        configureImageView()
         configureScrollView()
-//        configureImageView()
         configureMainView()
 //        configureLabel()
 //        configureButton()
     }
     
+    func configureImageView() {
+        view.addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: view.topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+    }
     
-//
+    
     func configureMainView() {
 //        whiteView.layer.cornerRadius = 0.75
         scrollView.addSubview(contentView)
@@ -54,6 +67,7 @@ class STMainViewController: UIViewController {
         view.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.bounces = false
+        scrollView.alpha = 0.5
 //        scrollView.backgroundColor = .yellow
         
         NSLayoutConstraint.activate([

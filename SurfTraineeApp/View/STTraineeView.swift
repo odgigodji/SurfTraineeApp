@@ -9,7 +9,6 @@ import UIKit
 
 class STTraineeView: UIView {
 
-    var imageView = UIImageView(image: UIImage(named: "background"))
     var whiteView = UIView()
     
     var label = UILabel()
@@ -17,7 +16,7 @@ class STTraineeView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        configureImageView()
+//        configureImageView()
         configureMainView()
         configureLabel()
         
@@ -32,16 +31,7 @@ class STTraineeView: UIView {
     }
     
     
-    func configureImageView() {
-        addSubview(imageView)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: topAnchor),
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: trailingAnchor)
-        ])
-    }
+   
     
     func configureMainView() {
         addSubview(whiteView)
@@ -52,7 +42,7 @@ class STTraineeView: UIView {
         whiteView.layer.cornerRadius = 32
         
         NSLayoutConstraint.activate([
-            whiteView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -100),
+            whiteView.topAnchor.constraint(equalTo: topAnchor, constant: 300),
             whiteView.widthAnchor.constraint(equalTo: widthAnchor),
             whiteView.leadingAnchor.constraint(equalTo: leadingAnchor),
             whiteView.trailingAnchor.constraint(equalTo: trailingAnchor),
