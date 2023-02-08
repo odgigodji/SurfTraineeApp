@@ -1,5 +1,4 @@
 # SurfTraineeApp
-Test app for Surf company
 
 ### Базовая версия:
 <!-- ✅  -->
