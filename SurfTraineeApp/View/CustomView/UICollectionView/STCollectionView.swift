@@ -66,9 +66,8 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("DIDSELECTITEMAT: \(cells[indexPath.row].titleLabel?.text!)")
-        let buttonState = cells[indexPath.row].pressState
-        cells[indexPath.row].pressState = !buttonState
-        cells[indexPath.row].didPressStateChanged()
+        
+        cells[indexPath.row].didPressed()
     }
 
 }

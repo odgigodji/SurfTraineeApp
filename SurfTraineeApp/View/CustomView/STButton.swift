@@ -13,7 +13,7 @@ class STButton: UIButton {
     
     var viewModel = STButtonViewModel()
 
-    var pressState = false
+    private var isPressed = false
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,21 +38,32 @@ class STButton: UIButton {
         }
     }
     
-    private func bindViewModel() {
-        viewModel.pressState?.bind { button in
-            DispatchQueue.main.async { [weak self] in
-                self?.didPressStateChanged()
-            }
+//    private func bindViewModel() {
+//        viewModel.pressState?.bind { button in
+//            DispatchQueue.main.async { [weak self] in
+//                self?.didPressStateChanged()
+//            }
+//        }
+//    }
+    
+    func didPressed() {
+        isPressed = !isPressed
+        didPressStateChanged()
+    }
+
+    
+    //MARK: - Private
+    
+    private func didPressStateChanged() {
+        if isPressed {
+            backgroundColor = STColors.coal
+            setTitleColor(.white, for: .normal)
+        } else {
+            backgroundColor = STColors.lightGray
+            setTitleColor(.black, for: .normal)
         }
     }
     
-    func didPressStateChanged() {
-        backgroundColor = .yellow
-        setTitleColor(.red, for: .normal)
-    }
-    
-    
-    //MARK: - Private
     /// Layout UI
     func configureBigButton() {
         titleLabel?.font = STFonts.medium16
