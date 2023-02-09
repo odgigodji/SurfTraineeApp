@@ -16,6 +16,11 @@ class MainViewPresenter: PresenterOutput {
         let directions = dataManager.getTraineeDirections()
         view.showNumbers(directions)
     }
+    
+    func createButtons(from traineeDirections: [String]) -> [STButton] {
+        let directions = dataManager.getTraineeDirections()
+        return [STButton]()
+    }
      
 //    func didPressedAction() {
 //

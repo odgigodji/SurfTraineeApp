@@ -12,12 +12,14 @@ class STCollectionView: UICollectionView, UICollectionViewDelegate,
 UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     //MARK: - test buttons
-    let cells = [STButton(type: .regular, title: "IOS"), STButton(type: .regular, title: "Androidaksdjfklasjdklfhkljh"), STButton(title: "Design"), STButton(title: "QA")] + [STButton(type: .regular, title: "PM"), STButton(type: .regular, title: "UX"), STButton(title: "UI"), STButton(title: "Test")]
+    var cells = [STButton(type: .regular, title: "IOS"), STButton(type: .regular, title: "Androidaksdjfklasjdklfhkljh"), STButton(title: "Design"), STButton(title: "QA")] + [STButton(type: .regular, title: "PM"), STButton(type: .regular, title: "UX"), STButton(title: "UI"), STButton(title: "Test")]
     
     init() {
         let layout                                  = UICollectionViewFlowLayout()
         layout.scrollDirection                      = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
+        
+        cells = getButtons(strings: ["Ios", "android", "ux"])
         
         translatesAutoresizingMaskIntoConstraints   = false
         showsHorizontalScrollIndicator              = false
@@ -27,6 +29,15 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         dataSource                                  = self
         register(STCollectionViewCell.self, forCellWithReuseIdentifier: STCollectionViewCell.id)
     }
+    
+    
+    private func getButtons(strings: [String]) -> [STButton] {
+        let buttons = strings.map { str in
+            STButton(title: str)
+        }
+        return buttons
+    }
+    
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -95,6 +95,7 @@ final class STMainViewController: UIViewController {
 extension STMainViewController: PresenterInput {
     func showNumbers(_ numbers: [String]) {
         print(numbers)
+        //передать buttons с data managera to collecitonView
     }
 }
 
