@@ -9,50 +9,35 @@ import UIKit
 
 class STCollectionViewCell: UICollectionViewCell {
     
-    let label = UILabel()
-    let myView = STButton(title: "IOS_FLUTTER")
+    let button = STButton(title: "IOS_FLUTTER")
     
     static let id = "STCollectionViewCell"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        backgroundColor = .white
 //        self.translatesAutoresizingMaskIntoConstraints = false
         
-//        NSLayoutConstraint.activate([
-//           heightAnchor.constraint(equalToConstant: 200)
-//        ])
-//
-        configuremyView()
-        configureLabel()
+        
+        configureButton()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureLabel() {
-        myView.addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
-//        label.text = "her"
-        
-        NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: myView.leadingAnchor),
-            label.trailingAnchor.constraint(equalTo: myView.trailingAnchor),
-            label.topAnchor.constraint(equalTo: myView.topAnchor),
-            label.bottomAnchor.constraint(equalTo: myView.bottomAnchor)
-        ])
-    }
-    
-    func configuremyView() {
-        addSubview(myView)
+    func configureButton() {
+        addSubview(button)
+//        layer.cornerRadius = 32
 //        myView.translatesAutoresizingMaskIntoConstraints = false
 //        myView.backgroundColor = .yellow
         
         NSLayoutConstraint.activate([
-            myView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            myView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            myView.topAnchor.constraint(equalTo: topAnchor),
-            myView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            button.leadingAnchor.constraint(equalTo: leadingAnchor),
+            button.trailingAnchor.constraint(equalTo: trailingAnchor),
+            button.topAnchor.constraint(equalTo: topAnchor),
+            button.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
