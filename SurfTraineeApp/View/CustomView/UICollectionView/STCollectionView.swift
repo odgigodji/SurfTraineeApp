@@ -68,6 +68,34 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         print("DIDSELECTITEMAT: \(cells[indexPath.row].titleLabel?.text!)")
         
         cells[indexPath.row].didPressed()
+        
+        let offsetX         = collectionView.contentOffset.x
+        let contentWidth   = collectionView.contentSize.width
+        
+        print("offsetX = \(offsetX)")
+        print("contentWidth = \(contentWidth)")
+        
+        animateButton(collectionView: collectionView)
+    }
+    
+    func scrollViewDidEndDragging(_ collectionView: UIScrollView, willDecelerate decelerate: Bool) {
+//        let offsetX         = collectionView.contentOffset.x
+//        let contentWidth   = collectionView.contentSize.width
+//
+//        print("offsetX = \(offsetX)")
+//        print("contentWidth = \(contentWidth)")
+//        let heightOfDisplay = collecionView.frame.size.t
+    }
+    
+    func animateButton(collectionView: UICollectionView) {
+//        UIView.animate(withDuration: 0.25) {
+            let layout = UICollectionViewFlowLayout()
+            layout.scrollDirection = .horizontal
+            layout.minimumLineSpacing = 8
+            layout.sectionInset = UIEdgeInsets(top: 0, left: 35, bottom: 0, right: 0)
+
+            collectionView.setCollectionViewLayout(layout, animated: true)
+//        }
     }
 
 }
