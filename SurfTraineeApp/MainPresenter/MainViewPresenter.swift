@@ -8,6 +8,7 @@
 import Foundation
 
 class MainViewPresenter: PresenterOutput {
+
    
     weak var view: PresenterInput!
     var dataManager: DataManager!
@@ -17,11 +18,11 @@ class MainViewPresenter: PresenterOutput {
         view.showNumbers(directions)
     }
     
-    func createButtons(from traineeDirections: [String]) -> [STButton] {
+    func createButtonsWithDirections() -> [STButton] {
         let directions = dataManager.getTraineeDirections()
         return [STButton]()
     }
-     
+    
 //    func didPressedAction() {
 //
 //        let traineeDirections = dataManager.getTraineeDirections()

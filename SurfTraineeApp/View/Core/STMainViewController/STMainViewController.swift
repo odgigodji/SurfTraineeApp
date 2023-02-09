@@ -32,7 +32,7 @@ final class STMainViewController: UIViewController {
     
     //MARK: - Private
     private func getTraineeDirections() {
-        output.getTraineeDirections()
+//        output.getTraineeDirections()
     }
     
     /// Layout UI

@@ -8,5 +8,6 @@
 import Foundation
 
 protocol PresenterOutput: AnyObject {
-    func getTraineeDirections()
+//    func getTraineeDirections()
+    func createButtonsWithDirections() -> [STButton]
 }

@@ -18,9 +18,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.windowScene = windowScene
         
-        assembly.createMainPresenter()
+//        assembly.createMainPresenter()
         
-        window?.rootViewController = assembly.view
+//        window?.rootViewController = assembly.view
+        window?.rootViewController = STMainViewController()
         window?.makeKeyAndVisible()
     }
 
