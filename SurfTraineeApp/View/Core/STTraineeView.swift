@@ -12,15 +12,17 @@ import UIKit
 final class STTraineeView: UIView {
 
     var topLabel = STLabel(text: "Стажировка в Surf", font: STFonts.bold24, textColor: .black)
+    var middleLabel = STLabel(text: "Работай над реальными задачами под руководством опытного наставника и получи возможность стать частью команды", font: STFonts.regular14, textColor: .gray)
     
     private var collectionView = STCollectionView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubviews(topLabel, collectionView)
+        self.addSubviews(topLabel, middleLabel, collectionView)
         
         configureTopLabel()
+        configureMiddleLabel()
         configureCollectionView()
     }
     
@@ -32,16 +34,24 @@ final class STTraineeView: UIView {
     //MARK: - Private
     private func configureTopLabel() {
         NSLayoutConstraint.activate([
-            topLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            topLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+            topLabel.topAnchor.constraint(equalTo: topAnchor, constant: 24),
+            topLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20)
+        ])
+    }
+    
+    private func configureMiddleLabel() {
+        NSLayoutConstraint.activate([
+            middleLabel.topAnchor.constraint(equalTo: topLabel.bottomAnchor, constant: 12),
+            middleLabel.leadingAnchor.constraint(equalTo: topLabel.leadingAnchor),
+            middleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
         ])
     }
     
     private func configureCollectionView() {
         NSLayoutConstraint.activate([
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.topAnchor.constraint(equalTo: topLabel.bottomAnchor, constant: 10),
+            collectionView.leadingAnchor.constraint(equalTo: topLabel.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            collectionView.topAnchor.constraint(equalTo: middleLabel.bottomAnchor, constant: 12),
             
             collectionView.heightAnchor.constraint(equalToConstant: 150)
         ])
