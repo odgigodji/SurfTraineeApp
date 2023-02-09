@@ -43,8 +43,8 @@ final class STTraineeView: UIView {
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.topAnchor.constraint(equalTo: topLabel.bottomAnchor, constant: 10),
-            collectionView.heightAnchor.constraint(equalToConstant: 300)
             
+            collectionView.heightAnchor.constraint(equalToConstant: 80)
         ])
     }
 }

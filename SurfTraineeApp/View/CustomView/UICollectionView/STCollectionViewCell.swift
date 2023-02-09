@@ -10,7 +10,7 @@ import UIKit
 class STCollectionViewCell: UICollectionViewCell {
     
     let label = UILabel()
-    let myView = UIView()
+    let myView = STButton(title: "IOS_FLUTTER")
     
     static let id = "STCollectionViewCell"
     
@@ -18,6 +18,10 @@ class STCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
 //        self.translatesAutoresizingMaskIntoConstraints = false
         
+//        NSLayoutConstraint.activate([
+//           heightAnchor.constraint(equalToConstant: 200)
+//        ])
+//
         configuremyView()
         configureLabel()
     }
@@ -29,7 +33,7 @@ class STCollectionViewCell: UICollectionViewCell {
     func configureLabel() {
         myView.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "her"
+//        label.text = "her"
         
         NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: myView.leadingAnchor),
@@ -41,8 +45,8 @@ class STCollectionViewCell: UICollectionViewCell {
     
     func configuremyView() {
         addSubview(myView)
-        myView.translatesAutoresizingMaskIntoConstraints = false
-        myView.backgroundColor = .yellow
+//        myView.translatesAutoresizingMaskIntoConstraints = false
+//        myView.backgroundColor = .yellow
         
         NSLayoutConstraint.activate([
             myView.leadingAnchor.constraint(equalTo: leadingAnchor),

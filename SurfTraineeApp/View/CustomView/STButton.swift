@@ -23,7 +23,7 @@ class STButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(type: STButtonType, title: String) {
+    convenience init(type: STButtonType = .regular, title: String) {
         self.init(frame: .zero)
         setTitle(title, for: .normal)
         
@@ -50,6 +50,18 @@ class STButton: UIButton {
     
     func configureRegularButton() {
         titleLabel?.font = STFonts.medium14
+        titleLabel?.backgroundColor = .black
+        layer.cornerRadius = 24
+        backgroundColor = UIColor.gray
+        
+        sizeToFit()
+        print("WIDTH \(frame.width)")
+        
+//        NSLayoutConstraint.activate([
+            //FIXME: - dynamic width
+//            heightAnchor.constraint(equalToConstant: 44),
+//            widthAnchor.constraint(equalToConstant: 100)
+//        ])
     }
 
 }
