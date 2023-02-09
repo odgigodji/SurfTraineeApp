@@ -38,9 +38,8 @@ class STButton: UIButton {
     func configureBigButton() {
         titleLabel?.font = STFonts.medium16
         setTitleColor(.white, for: .normal)
-        layer.cornerRadius = 32
-//        self.backgroundColor = UIColor.systemGray6
-        self.backgroundColor = UIColor.black
+        layer.cornerRadius = 30
+        backgroundColor = STColors.coal
         
         NSLayoutConstraint.activate([
             heightAnchor.constraint(equalToConstant: 60),
@@ -52,7 +51,7 @@ class STButton: UIButton {
         titleLabel?.font = STFonts.medium14
         setTitleColor(.black, for: .normal)
         layer.cornerRadius = 12
-        backgroundColor = UIColor.gray
+        backgroundColor = STColors.lightGray
         
 //        NSLayoutConstraint.activate([
 //            heightAnchor.constraint(equalToConstant: 60),

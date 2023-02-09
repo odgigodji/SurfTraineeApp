@@ -29,6 +29,7 @@ final class STTraineeTopStackView: UIStackView {
     private func configureStackView() {
         axis            = .vertical
         distribution    = .fillEqually
+        spacing         = 6
 //        alignment       = .f
         
 //        backgroundColor = .green
