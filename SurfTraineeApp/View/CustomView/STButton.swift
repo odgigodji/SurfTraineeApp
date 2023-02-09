@@ -10,13 +10,16 @@ import UIKit
 
 /// custom Button uses in application
 class STButton: UIButton {
+    
+//    var viewModel = STButtonViewModel()
 
     private var pressState = false
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.translatesAutoresizingMaskIntoConstraints = false
+        translatesAutoresizingMaskIntoConstraints   = false
+        isUserInteractionEnabled                    = false
     }
     
     required init?(coder: NSCoder) {
@@ -34,7 +37,17 @@ class STButton: UIButton {
             configureRegularButton()
         }
     }
+//    
+//    private func bindViewModel() {
+//        viewModel.button.bind { button in
+//            DispatchQueue.main.async { [weak self] in
+//                
+//            }
+//        }
+//    }
     
+    //MARK: - Private
+    /// Layout UI
     func configureBigButton() {
         titleLabel?.font = STFonts.medium16
         setTitleColor(.white, for: .normal)

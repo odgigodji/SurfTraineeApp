@@ -53,6 +53,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         
         cell.button = cells[indexPath.row]
         cell.configureButton()
+//        cell.isUserInteractionEnabled = true
         return cell
     }
     
@@ -62,5 +63,9 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         return CGSize(width: 71, height: 44)
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
 
 }
