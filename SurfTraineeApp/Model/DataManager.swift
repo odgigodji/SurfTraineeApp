@@ -8,17 +8,16 @@
 import Foundation
 
 protocol DataManager {
-    var numbers: [Int] {get set}
-    func obtainNumbers() -> [Int]
+    var traineeDirections: [String] {get set}
+    func getTraineeDirections() -> [String]
 }
 
 class DataManagerImpl: DataManager {
+    var traineeDirections = [String]()
     
-    var numbers: [Int] = [1, 2, 3, 4, 5]
-    
-    func obtainNumbers() -> [Int] {
+    func getTraineeDirections() -> [String] {
         
-//        return [1, 2, 3, 4, 5]
-        return numbers
+        let traineeDirestions = ["IOS", "Android", "Design", "Flutter", " QA", "PM", "Devops", "Backend", "Machine Learning", "Game Dev"]
+        return traineeDirestions
     }
 }

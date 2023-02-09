@@ -53,12 +53,12 @@ class STButton: UIButton {
         layer.cornerRadius = 12
         backgroundColor = STColors.lightGray
         
+//        sizeToFit()
 //        NSLayoutConstraint.activate([
 //            heightAnchor.constraint(equalToConstant: 60),
 //            widthAnchor.constraint(equalToConstant: 100)
 //        ])
         
-        sizeToFit()
 //        print("WIDTH \(frame.width)")
         
 //        NSLayoutConstraint.activate([

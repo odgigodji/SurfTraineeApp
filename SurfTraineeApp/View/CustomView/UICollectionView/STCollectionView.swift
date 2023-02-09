@@ -12,7 +12,7 @@ class STCollectionView: UICollectionView, UICollectionViewDelegate,
 UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     //MARK: - test buttons
-    let cells = [STButton(type: .regular, title: "IOS"), STButton(type: .regular, title: "Android"), STButton(title: "Design"), STButton(title: "QA")] + [STButton(type: .regular, title: "PM"), STButton(type: .regular, title: "UX"), STButton(title: "UI"), STButton(title: "Test")]
+    let cells = [STButton(type: .regular, title: "IOS"), STButton(type: .regular, title: "Androidaksdjfklasjdklfhkljh"), STButton(title: "Design"), STButton(title: "QA")] + [STButton(type: .regular, title: "PM"), STButton(type: .regular, title: "UX"), STButton(title: "UI"), STButton(title: "Test")]
     
     init() {
         let layout                                  = UICollectionViewFlowLayout()

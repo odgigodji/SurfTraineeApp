@@ -19,8 +19,8 @@ class MainViewPresenter: PresenterOutput {
     
     func didPressedAction() {
         
-        let numbers = dataManager.obtainNumbers()
-        view.showNumbers(numbers)
+        let traineeDirections = dataManager.getTraineeDirections()
+//        view.showNumbers(numbers)
     }
     
 //    func updateDataManger() {
