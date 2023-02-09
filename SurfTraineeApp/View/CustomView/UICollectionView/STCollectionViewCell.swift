@@ -9,26 +9,35 @@ import UIKit
 
 class STCollectionViewCell: UICollectionViewCell {
     
-    let button = STButton(title: "IOS_FLUTTER")
+    var button : STButton?
     
     static let id = "STCollectionViewCell"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .white
+//        backgroundColor = .white
 //        self.translatesAutoresizingMaskIntoConstraints = false
         
-        
-        configureButton()
+//        print("BUTTON \(button.titleLabel?.text)")
+//        configureButton()
     }
+    
+//    convenience init(button: UIButton) {
+//        self.init(frame: .zero)
+//
+//        self.button = button as! STButton
+//        configureButton()
+//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     func configureButton() {
+        guard let button = button else { return }
         addSubview(button)
+        backgroundColor = .white
 //        layer.cornerRadius = 32
 //        myView.translatesAutoresizingMaskIntoConstraints = false
 //        myView.backgroundColor = .yellow
