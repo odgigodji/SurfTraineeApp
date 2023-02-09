@@ -19,6 +19,8 @@ class MainAssembly {
         
         presenter.view          = view
         presenter.dataManager   = dataManager
+        
+//        presenter.getTraineeDirections()
     }
     
 }

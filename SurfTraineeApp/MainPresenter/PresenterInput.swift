@@ -8,5 +8,5 @@
 import Foundation
 
 protocol PresenterInput: AnyObject {
-    func showNumbers(_ numbers: [Int])
+    func showNumbers(_ numbers: [String])
 }

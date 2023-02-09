@@ -7,24 +7,25 @@
 
 import Foundation
 
-
-//D - Dependensy injection
-//связи верхнего уровня не зависят от связей нижнего уровня, связываться с протоколами
-
 class MainViewPresenter: PresenterOutput {
-    
-    
+   
     weak var view: PresenterInput!
     var dataManager: DataManager!
     
-    func didPressedAction() {
-        
-        let traineeDirections = dataManager.getTraineeDirections()
-//        view.showNumbers(numbers)
+    func getTraineeDirections() {
+        let directions = dataManager.getTraineeDirections()
+        view.showNumbers(directions)
     }
-    
+     
+//    func didPressedAction() {
+//
+//        let traineeDirections = dataManager.getTraineeDirections()
+//        view.showNumbers(traineeDirections)
+////        view.showNumbers(numbers)
+//    }
+//
 //    func updateDataManger() {
-//        dataManager.numbers = [6, 7, 8, 9, 10]
+//        dataManager.traineeDirections = ["her ", "adsf"]
 //    }
     
 }

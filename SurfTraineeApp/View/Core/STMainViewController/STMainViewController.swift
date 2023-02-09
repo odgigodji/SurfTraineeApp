@@ -31,7 +31,11 @@ final class STMainViewController: UIViewController {
     }
     
     //MARK: - Private
+    private func getTraineeDirections() {
+        output.getTraineeDirections()
+    }
     
+    /// Layout UI
     private func configureImageView() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -89,8 +93,8 @@ final class STMainViewController: UIViewController {
 
 //MARK: - Input
 extension STMainViewController: PresenterInput {
-    func showNumbers(_ numbers: [Int]) {
-//        let numbersString = numbers.map({"\($0)"}).joined(separator: ",")
-//        label.text = numbersString
+    func showNumbers(_ numbers: [String]) {
+        print(numbers)
     }
 }
+
