@@ -17,7 +17,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         layout.scrollDirection = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
         
-        backgroundColor = .systemMint
+        backgroundColor = .brown
         delegate = self
         dataSource = self
         register(STCollectionViewCell.self, forCellWithReuseIdentifier: STCollectionViewCell.id)
