@@ -75,10 +75,13 @@ final class STMainViewController: UIViewController {
         view.addSubview(bottomView)
         
         NSLayoutConstraint.activate([
-            bottomView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10),
-            bottomView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            bottomView.widthAnchor.constraint(equalToConstant: 300),
-            bottomView.heightAnchor.constraint(equalToConstant: 100)
+            bottomView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+            bottomView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            bottomView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+//            bottomView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+//            bottomView.widthAnchor.constraint(equalToConstant: 219),
+//            bottomView.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
 }
