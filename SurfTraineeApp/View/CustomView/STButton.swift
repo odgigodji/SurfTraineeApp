@@ -13,7 +13,7 @@ class STButton: UIButton {
     
 //    var viewModel = STButtonViewModel()
 
-    private var pressState = false
+    var pressState = false
 
     override init(frame: CGRect) {
         super.init(frame: frame)
