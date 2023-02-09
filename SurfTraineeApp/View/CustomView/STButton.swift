@@ -36,11 +36,14 @@ class STButton: UIButton {
     }
     
     func configureBigButton() {
-        titleLabel?.font = Fonts.medium16
+        titleLabel?.font = STFonts.medium16
+        titleLabel?.textColor = .white
+        layer.cornerRadius = 52
+        self.backgroundColor = UIColor.black
     }
     
     func configureRegularButton() {
-        titleLabel?.font = Fonts.medium14
+        titleLabel?.font = STFonts.medium14
     }
 
 }

@@ -15,6 +15,9 @@ final class STMainViewController: UIViewController {
     private var scrollView  = UIScrollView()
     private var contentView = STTraineeView(frame: .zero)
     
+//    private var button = STButton(type: .big, title: "Отправить заявку")
+    private var bottomView = STBottomStackView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,12 +26,13 @@ final class STMainViewController: UIViewController {
         configureImageView()
         configureScrollView()
         configureMainView()
+        
+        configureButton()
     }
     
     //MARK: - Private
     
     private func configureImageView() {
-//        view.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -39,7 +43,6 @@ final class STMainViewController: UIViewController {
     }
     
     private func configureScrollView() {
-//        view.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints    = false
         scrollView.bounces                                      = false
         scrollView.showsVerticalScrollIndicator                 = false
@@ -54,7 +57,6 @@ final class STMainViewController: UIViewController {
     
     private func configureMainView() {
         scrollView.addSubview(contentView)
-//        contentView.translatesAutoresizingMaskIntoConstraints   = false
         contentView.backgroundColor                             = .white
         contentView.layer.cornerRadius                          = 32
         
@@ -69,6 +71,16 @@ final class STMainViewController: UIViewController {
         ])
     }
     
+    private func configureButton() {
+        view.addSubview(bottomView)
+        
+        NSLayoutConstraint.activate([
+            bottomView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10),
+            bottomView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            bottomView.widthAnchor.constraint(equalToConstant: 300),
+            bottomView.heightAnchor.constraint(equalToConstant: 100)
+        ])
+    }
 }
 
 //MARK: - Input

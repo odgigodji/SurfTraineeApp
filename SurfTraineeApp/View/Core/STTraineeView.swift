@@ -7,9 +7,11 @@
 
 import UIKit
 
-class STTraineeView: UIView {
 
-    var topLabel = STLabel(text: "Стажировка в Surf", font: Fonts.bold24, textColor: .black)
+/// Content View
+final class STTraineeView: UIView {
+
+    var topLabel = STLabel(text: "Стажировка в Surf", font: STFonts.bold24, textColor: .black)
     
     private var collectionView = STCollectionView()
     
@@ -18,7 +20,7 @@ class STTraineeView: UIView {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.addSubviews(topLabel, collectionView)
         
-        configureLabel()
+        configureTopLabel()
         configureCollectionView()
 
     }
@@ -28,14 +30,15 @@ class STTraineeView: UIView {
     }
     
     
-    func configureLabel() {
+    //MARK: - Private
+    private func configureTopLabel() {
         NSLayoutConstraint.activate([
             topLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             topLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
     }
     
-    func configureCollectionView() {
+    private func configureCollectionView() {
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
