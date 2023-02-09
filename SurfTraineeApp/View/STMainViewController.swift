@@ -20,12 +20,12 @@ class STMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view = contentView
+//        view = contentView
 //        view.backgroundColor = .systemPink
 
-//        configureImageView()
-//        configureScrollView()
-//        configureMainView()
+        configureImageView()
+        configureScrollView()
+        configureMainView()
         
 //        configureLabel()
 //        configureButton()
@@ -50,7 +50,7 @@ class STMainViewController: UIViewController {
         contentView.backgroundColor = .white
 
         NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 300),
             contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
@@ -69,6 +69,7 @@ class STMainViewController: UIViewController {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.bounces = false
         scrollView.alpha = 0.5
+//        scrollView.contentOffset.y = -view.bounds.height
 //        scrollView.backgroundColor = .yellow
         
         NSLayoutConstraint.activate([
