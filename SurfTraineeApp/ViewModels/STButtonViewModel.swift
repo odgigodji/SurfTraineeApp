@@ -7,12 +7,13 @@
 
 import Foundation
 
-//protocol ObservableSTButtonViewModelProtocol {
-//    var button: Dynamic<[STButton]> { get  set }
-//}
-//
-//final class STButtonViewModel: ObservableSTButtonViewModelProtocol {
-//    var button: Dynamic<[STButton]> = Dynamic([])
-//
-//
-//}
+protocol ObservableSTButtonViewModelProtocol {
+    var pressState: Dynamic<Bool>? { get  set }
+}
+
+final class STButtonViewModel: ObservableSTButtonViewModelProtocol {
+    var pressState: Dynamic<Bool>?
+    
+    
+
+}

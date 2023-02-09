@@ -11,7 +11,7 @@ import UIKit
 /// custom Button uses in application
 class STButton: UIButton {
     
-//    var viewModel = STButtonViewModel()
+    var viewModel = STButtonViewModel()
 
     var pressState = false
 
@@ -37,14 +37,20 @@ class STButton: UIButton {
             configureRegularButton()
         }
     }
-//    
-//    private func bindViewModel() {
-//        viewModel.button.bind { button in
-//            DispatchQueue.main.async { [weak self] in
-//                
-//            }
-//        }
-//    }
+    
+    private func bindViewModel() {
+        viewModel.pressState?.bind { button in
+            DispatchQueue.main.async { [weak self] in
+                self?.didPressStateChanged()
+            }
+        }
+    }
+    
+    func didPressStateChanged() {
+        backgroundColor = .yellow
+        setTitleColor(.red, for: .normal)
+    }
+    
     
     //MARK: - Private
     /// Layout UI
