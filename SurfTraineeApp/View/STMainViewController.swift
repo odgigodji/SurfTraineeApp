@@ -44,17 +44,17 @@ class STMainViewController: UIViewController {
     
     
     func configureMainView() {
-//        whiteView.layer.cornerRadius = 0.75
         scrollView.addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.backgroundColor = .white
+        contentView.layer.cornerRadius = 32
 
         NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 300),
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 500),
             contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentView.heightAnchor.constraint(equalToConstant: 2000)
+            contentView.heightAnchor.constraint(equalToConstant: view.frame.height - 10)
             
             
 //            mainView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -100),
@@ -68,12 +68,13 @@ class STMainViewController: UIViewController {
         view.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.bounces = false
-        scrollView.alpha = 0.5
+        scrollView.showsVerticalScrollIndicator = false
+//        scrollView.alpha = 0.5
 //        scrollView.contentOffset.y = -view.bounds.height
 //        scrollView.backgroundColor = .yellow
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: -50),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 50),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
