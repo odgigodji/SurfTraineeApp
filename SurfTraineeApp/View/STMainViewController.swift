@@ -20,12 +20,13 @@ class STMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        view = contentView
+        view = contentView
 //        view.backgroundColor = .systemPink
 
-        configureImageView()
-        configureScrollView()
-        configureMainView()
+//        configureImageView()
+//        configureScrollView()
+//        configureMainView()
+        
 //        configureLabel()
 //        configureButton()
     }

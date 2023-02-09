@@ -10,8 +10,9 @@ import UIKit
 class STTraineeView: UIView {
 
     var whiteView = UIView()
-    
     var label = UILabel()
+    
+    private var collectionView = STCollectionView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,6 +20,7 @@ class STTraineeView: UIView {
 //        configureImageView()
         configureMainView()
         configureLabel()
+        configureCollectionView()
         
 //        NSLayoutConstraint.activate([
 //            heightAnchor.constraint(equalToConstant: 1000),
@@ -31,8 +33,6 @@ class STTraineeView: UIView {
     }
     
     
-   
-    
     func configureMainView() {
         addSubview(whiteView)
         whiteView.translatesAutoresizingMaskIntoConstraints = false
@@ -42,7 +42,8 @@ class STTraineeView: UIView {
         whiteView.layer.cornerRadius = 32
         
         NSLayoutConstraint.activate([
-            whiteView.topAnchor.constraint(equalTo: topAnchor, constant: 300),
+            whiteView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+//            whiteView.topAnchor.constraint(equalTo: topAnchor, constant: 300),
             whiteView.widthAnchor.constraint(equalTo: widthAnchor),
             whiteView.leadingAnchor.constraint(equalTo: leadingAnchor),
             whiteView.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -56,12 +57,23 @@ class STTraineeView: UIView {
         
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: whiteView.topAnchor, constant: 20),
-            label.centerXAnchor.constraint(equalTo: centerXAnchor)
+            label.centerXAnchor.constraint(equalTo: whiteView.centerXAnchor)
         ])
         
-//        label.font = UIFont.systemFont(ofSize: 32)
-//        label.font = UIFont.boldSystemFont(ofSize: 32)
         label.font =  Fonts.bold24
         label.text = "Cтажировка в Surf"
+    }
+    
+    func configureCollectionView() {
+        whiteView.addSubview(collectionView)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            collectionView.leadingAnchor.constraint(equalTo: whiteView.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: whiteView.trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 10),
+            collectionView.heightAnchor.constraint(equalToConstant: 300)
+            
+        ])
     }
 }

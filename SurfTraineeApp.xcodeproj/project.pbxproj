@@ -21,6 +21,8 @@
 		FAE4168E2994142A000484E3 /* STLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4168D2994142A000484E3 /* STLabel.swift */; };
 		FAE4169129941765000484E3 /* DefaultLabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4169029941765000484E3 /* DefaultLabelFactory.swift */; };
 		FAE4169429941814000484E3 /* STFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4169329941814000484E3 /* STFonts.swift */; };
+		FAE4169B2994F0FA000484E3 /* STCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4169A2994F0FA000484E3 /* STCollectionView.swift */; };
+		FAE4169E2994F3DC000484E3 /* STCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4169D2994F3DC000484E3 /* STCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		FAE4168D2994142A000484E3 /* STLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLabel.swift; sourceTree = "<group>"; };
 		FAE4169029941765000484E3 /* DefaultLabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLabelFactory.swift; sourceTree = "<group>"; };
 		FAE4169329941814000484E3 /* STFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STFonts.swift; sourceTree = "<group>"; };
+		FAE4169A2994F0FA000484E3 /* STCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STCollectionView.swift; sourceTree = "<group>"; };
+		FAE4169D2994F3DC000484E3 /* STCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +132,9 @@
 		FAE4168929941010000484E3 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				FAE4169C2994F3B8000484E3 /* UICollectionViewCells */,
 				FAE4168D2994142A000484E3 /* STLabel.swift */,
+				FAE4169A2994F0FA000484E3 /* STCollectionView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -155,6 +161,14 @@
 				FAE4169329941814000484E3 /* STFonts.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		FAE4169C2994F3B8000484E3 /* UICollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				FAE4169D2994F3DC000484E3 /* STCollectionViewCell.swift */,
+			);
+			path = UICollectionViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +244,7 @@
 				FAE4169429941814000484E3 /* STFonts.swift in Sources */,
 				FAC8147F2912EBB4006B3130 /* Assembly.swift in Sources */,
 				FAC814782912DC6F006B3130 /* DataManager.swift in Sources */,
+				FAE4169E2994F3DC000484E3 /* STCollectionViewCell.swift in Sources */,
 				FA5D5E482912D5AF00066241 /* AppDelegate.swift in Sources */,
 				FAE4168C29941085000484E3 /* UIView + Ext.swift in Sources */,
 				FAE4169129941765000484E3 /* DefaultLabelFactory.swift in Sources */,
@@ -237,6 +252,7 @@
 				FAE416882993D3A4000484E3 /* STTraineeView.swift in Sources */,
 				FAC814752912DC53006B3130 /* MainViewPresenter.swift in Sources */,
 				FAC814952913B416006B3130 /* PresenterOutput.swift in Sources */,
+				FAE4169B2994F0FA000484E3 /* STCollectionView.swift in Sources */,
 				FA1C471B2955FD8B00AEB8FA /* PresenterInput.swift in Sources */,
 				FAE4168E2994142A000484E3 /* STLabel.swift in Sources */,
 			);
