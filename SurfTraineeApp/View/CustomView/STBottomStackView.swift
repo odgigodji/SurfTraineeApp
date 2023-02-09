@@ -28,7 +28,9 @@ final class STBottomStackView: UIStackView {
     private func configureStackView() {
         axis            = .horizontal
         distribution    = .fillProportionally
-        alignment       = .fill
+//        alignment       = .f
+        
+//        backgroundColor = .green
        
         addArrangedSubview(label)
         addArrangedSubview(button)

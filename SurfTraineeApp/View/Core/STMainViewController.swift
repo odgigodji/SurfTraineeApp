@@ -27,7 +27,7 @@ final class STMainViewController: UIViewController {
         configureScrollView()
         configureMainView()
         
-        configureButton()
+        configureBottomView()
     }
     
     //MARK: - Private
@@ -71,11 +71,11 @@ final class STMainViewController: UIViewController {
         ])
     }
     
-    private func configureButton() {
+    private func configureBottomView() {
         view.addSubview(bottomView)
         
         NSLayoutConstraint.activate([
-            bottomView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+            bottomView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -58),
             bottomView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             bottomView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
 //            bottomView.centerXAnchor.constraint(equalTo: view.centerXAnchor),

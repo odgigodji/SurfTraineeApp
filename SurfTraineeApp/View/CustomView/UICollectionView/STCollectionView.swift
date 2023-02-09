@@ -37,7 +37,6 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: STCollectionViewCell.id, for: indexPath) as! STCollectionViewCell
         
-        print(indexPath.row)
         cell.button = cells[indexPath.row]
         cell.configureButton()
         return cell
