@@ -1,5 +1,5 @@
 //
-//  STBottomView.swift
+//  STMainBottomView.swift
 //  SurfTraineeApp
 //
 //  Created by Nikita Evdokimov on 09.02.23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class STBottomStackView: UIStackView {
+final class STMainBottomStackView: UIStackView {
     
     private var button = STButton(type: .big, title: "Отправить заявку")
     private var label = STLabel(text: "Xочешь к нам?", font: STFonts.regular14, textColor: .gray)

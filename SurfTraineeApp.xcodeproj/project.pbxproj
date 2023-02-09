@@ -10,8 +10,9 @@
 		FA1C471B2955FD8B00AEB8FA /* PresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C471A2955FD8B00AEB8FA /* PresenterInput.swift */; };
 		FA49F91929950958004C0CBF /* STButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F91829950958004C0CBF /* STButton.swift */; };
 		FA49F91B29951434004C0CBF /* STButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F91A29951434004C0CBF /* STButtonType.swift */; };
-		FA49F91D2995196C004C0CBF /* STBottomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F91C2995196C004C0CBF /* STBottomStackView.swift */; };
+		FA49F91D2995196C004C0CBF /* STMainBottomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F91C2995196C004C0CBF /* STMainBottomStackView.swift */; };
 		FA49F91F29951F9E004C0CBF /* STColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F91E29951F9E004C0CBF /* STColors.swift */; };
+		FA49F92129954747004C0CBF /* STTraineeTopStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F92029954747004C0CBF /* STTraineeTopStackView.swift */; };
 		FA5D5E482912D5AF00066241 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D5E472912D5AF00066241 /* AppDelegate.swift */; };
 		FA5D5E4A2912D5AF00066241 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D5E492912D5AF00066241 /* SceneDelegate.swift */; };
 		FA5D5E4C2912D5AF00066241 /* STMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D5E4B2912D5AF00066241 /* STMainViewController.swift */; };
@@ -33,8 +34,9 @@
 		FA1C471A2955FD8B00AEB8FA /* PresenterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterInput.swift; sourceTree = "<group>"; };
 		FA49F91829950958004C0CBF /* STButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STButton.swift; sourceTree = "<group>"; };
 		FA49F91A29951434004C0CBF /* STButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STButtonType.swift; sourceTree = "<group>"; };
-		FA49F91C2995196C004C0CBF /* STBottomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STBottomStackView.swift; sourceTree = "<group>"; };
+		FA49F91C2995196C004C0CBF /* STMainBottomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STMainBottomStackView.swift; sourceTree = "<group>"; };
 		FA49F91E29951F9E004C0CBF /* STColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STColors.swift; sourceTree = "<group>"; };
+		FA49F92029954747004C0CBF /* STTraineeTopStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STTraineeTopStackView.swift; sourceTree = "<group>"; };
 		FA5D5E442912D5AF00066241 /* SurfTraineeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurfTraineeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5D5E472912D5AF00066241 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA5D5E492912D5AF00066241 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,10 +71,28 @@
 		FA49F9172995060D004C0CBF /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				FA5D5E4B2912D5AF00066241 /* STMainViewController.swift */,
-				FAE416872993D3A4000484E3 /* STTraineeView.swift */,
+				FA49F922299549E8004C0CBF /* STTraineeView */,
+				FA49F923299549F9004C0CBF /* STMainViewController */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		FA49F922299549E8004C0CBF /* STTraineeView */ = {
+			isa = PBXGroup;
+			children = (
+				FAE416872993D3A4000484E3 /* STTraineeView.swift */,
+				FA49F92029954747004C0CBF /* STTraineeTopStackView.swift */,
+			);
+			path = STTraineeView;
+			sourceTree = "<group>";
+		};
+		FA49F923299549F9004C0CBF /* STMainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FA5D5E4B2912D5AF00066241 /* STMainViewController.swift */,
+				FA49F91C2995196C004C0CBF /* STMainBottomStackView.swift */,
+			);
+			path = STMainViewController;
 			sourceTree = "<group>";
 		};
 		FA5D5E3B2912D5AF00066241 = {
@@ -151,7 +171,6 @@
 				FAE4169C2994F3B8000484E3 /* UICollectionView */,
 				FAE4168D2994142A000484E3 /* STLabel.swift */,
 				FA49F91829950958004C0CBF /* STButton.swift */,
-				FA49F91C2995196C004C0CBF /* STBottomStackView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -267,13 +286,14 @@
 				FA49F91F29951F9E004C0CBF /* STColors.swift in Sources */,
 				FAC814782912DC6F006B3130 /* DataManager.swift in Sources */,
 				FAE4169E2994F3DC000484E3 /* STCollectionViewCell.swift in Sources */,
-				FA49F91D2995196C004C0CBF /* STBottomStackView.swift in Sources */,
+				FA49F91D2995196C004C0CBF /* STMainBottomStackView.swift in Sources */,
 				FA5D5E482912D5AF00066241 /* AppDelegate.swift in Sources */,
 				FAE4168C29941085000484E3 /* UIView + Ext.swift in Sources */,
 				FAE4169129941765000484E3 /* DefaultLabelFactory.swift in Sources */,
 				FA5D5E4A2912D5AF00066241 /* SceneDelegate.swift in Sources */,
 				FAE416882993D3A4000484E3 /* STTraineeView.swift in Sources */,
 				FAC814752912DC53006B3130 /* MainViewPresenter.swift in Sources */,
+				FA49F92129954747004C0CBF /* STTraineeTopStackView.swift in Sources */,
 				FAC814952913B416006B3130 /* PresenterOutput.swift in Sources */,
 				FA49F91929950958004C0CBF /* STButton.swift in Sources */,
 				FAE4169B2994F0FA000484E3 /* STCollectionView.swift in Sources */,

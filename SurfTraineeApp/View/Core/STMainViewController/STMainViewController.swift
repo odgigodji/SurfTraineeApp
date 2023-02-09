@@ -16,7 +16,7 @@ final class STMainViewController: UIViewController {
     private var contentView = STTraineeView(frame: .zero)
     
 //    private var button = STButton(type: .big, title: "Отправить заявку")
-    private var bottomView = STBottomStackView()
+    private var bottomView = STMainBottomStackView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,8 +63,9 @@ final class STMainViewController: UIViewController {
 //        let safeAreaInsets = UIApplication.shared.windows.first?.safeAreaInsets.top
         
         NSLayoutConstraint.activate([
+            //FIXME: - constant
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 500),
-            contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.heightAnchor.constraint(equalToConstant: view.frame.height)
