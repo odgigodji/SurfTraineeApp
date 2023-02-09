@@ -16,6 +16,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         super.init(frame: .zero, collectionViewLayout: layout)
+        self.translatesAutoresizingMaskIntoConstraints = false
         
         backgroundColor = .brown
         delegate = self

@@ -19,5 +19,10 @@ extension UIView {
             self.heightAnchor.constraint(equalToConstant: height ?? 0)
         ])
     }
+    
+    
+    func addSubviews(_ views: UIView...) {
+        for view in views { self.addSubview(view) }
+    }
 }
 

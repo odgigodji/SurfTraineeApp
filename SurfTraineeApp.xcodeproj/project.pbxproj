@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FA1C471B2955FD8B00AEB8FA /* PresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C471A2955FD8B00AEB8FA /* PresenterInput.swift */; };
+		FA49F91929950958004C0CBF /* STButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F91829950958004C0CBF /* STButton.swift */; };
+		FA49F91B29951434004C0CBF /* STButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F91A29951434004C0CBF /* STButtonType.swift */; };
 		FA5D5E482912D5AF00066241 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D5E472912D5AF00066241 /* AppDelegate.swift */; };
 		FA5D5E4A2912D5AF00066241 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D5E492912D5AF00066241 /* SceneDelegate.swift */; };
 		FA5D5E4C2912D5AF00066241 /* STMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D5E4B2912D5AF00066241 /* STMainViewController.swift */; };
@@ -27,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		FA1C471A2955FD8B00AEB8FA /* PresenterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterInput.swift; sourceTree = "<group>"; };
+		FA49F91829950958004C0CBF /* STButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STButton.swift; sourceTree = "<group>"; };
+		FA49F91A29951434004C0CBF /* STButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STButtonType.swift; sourceTree = "<group>"; };
 		FA5D5E442912D5AF00066241 /* SurfTraineeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurfTraineeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5D5E472912D5AF00066241 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA5D5E492912D5AF00066241 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +62,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA49F9172995060D004C0CBF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FA5D5E4B2912D5AF00066241 /* STMainViewController.swift */,
+				FAE416872993D3A4000484E3 /* STTraineeView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		FA5D5E3B2912D5AF00066241 = {
 			isa = PBXGroup;
 			children = (
@@ -105,8 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				FAE4168929941010000484E3 /* CustomView */,
-				FA5D5E4B2912D5AF00066241 /* STMainViewController.swift */,
-				FAE416872993D3A4000484E3 /* STTraineeView.swift */,
+				FA49F9172995060D004C0CBF /* Core */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -132,9 +144,9 @@
 		FAE4168929941010000484E3 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				FAE4169C2994F3B8000484E3 /* UICollectionViewCells */,
+				FAE4169C2994F3B8000484E3 /* UICollectionView */,
 				FAE4168D2994142A000484E3 /* STLabel.swift */,
-				FAE4169A2994F0FA000484E3 /* STCollectionView.swift */,
+				FA49F91829950958004C0CBF /* STButton.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -159,16 +171,18 @@
 			isa = PBXGroup;
 			children = (
 				FAE4169329941814000484E3 /* STFonts.swift */,
+				FA49F91A29951434004C0CBF /* STButtonType.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		FAE4169C2994F3B8000484E3 /* UICollectionViewCells */ = {
+		FAE4169C2994F3B8000484E3 /* UICollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				FAE4169A2994F0FA000484E3 /* STCollectionView.swift */,
 				FAE4169D2994F3DC000484E3 /* STCollectionViewCell.swift */,
 			);
-			path = UICollectionViewCells;
+			path = UICollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +256,7 @@
 			files = (
 				FA5D5E4C2912D5AF00066241 /* STMainViewController.swift in Sources */,
 				FAE4169429941814000484E3 /* STFonts.swift in Sources */,
+				FA49F91B29951434004C0CBF /* STButtonType.swift in Sources */,
 				FAC8147F2912EBB4006B3130 /* Assembly.swift in Sources */,
 				FAC814782912DC6F006B3130 /* DataManager.swift in Sources */,
 				FAE4169E2994F3DC000484E3 /* STCollectionViewCell.swift in Sources */,
@@ -252,6 +267,7 @@
 				FAE416882993D3A4000484E3 /* STTraineeView.swift in Sources */,
 				FAC814752912DC53006B3130 /* MainViewPresenter.swift in Sources */,
 				FAC814952913B416006B3130 /* PresenterOutput.swift in Sources */,
+				FA49F91929950958004C0CBF /* STButton.swift in Sources */,
 				FAE4169B2994F0FA000484E3 /* STCollectionView.swift in Sources */,
 				FA1C471B2955FD8B00AEB8FA /* PresenterInput.swift in Sources */,
 				FAE4168E2994142A000484E3 /* STLabel.swift in Sources */,

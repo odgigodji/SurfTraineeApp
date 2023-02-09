@@ -18,6 +18,8 @@ final class STMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.addSubviews(imageView, scrollView)
+        
         configureImageView()
         configureScrollView()
         configureMainView()
@@ -26,7 +28,7 @@ final class STMainViewController: UIViewController {
     //MARK: - Private
     
     private func configureImageView() {
-        view.addSubview(imageView)
+//        view.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -37,10 +39,10 @@ final class STMainViewController: UIViewController {
     }
     
     private func configureScrollView() {
-        view.addSubview(scrollView)
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.bounces = false
-        scrollView.showsVerticalScrollIndicator = false
+//        view.addSubview(scrollView)
+        scrollView.translatesAutoresizingMaskIntoConstraints    = false
+        scrollView.bounces                                      = false
+        scrollView.showsVerticalScrollIndicator                 = false
         
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
@@ -52,16 +54,18 @@ final class STMainViewController: UIViewController {
     
     private func configureMainView() {
         scrollView.addSubview(contentView)
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.backgroundColor = .systemBackground
-        contentView.layer.cornerRadius = 32
+//        contentView.translatesAutoresizingMaskIntoConstraints   = false
+        contentView.backgroundColor                             = .white
+        contentView.layer.cornerRadius                          = 32
+        
+//        let safeAreaInsets = UIApplication.shared.windows.first?.safeAreaInsets.top
         
         NSLayoutConstraint.activate([
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 500),
             contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentView.heightAnchor.constraint(equalToConstant: view.frame.height - 10)
+            contentView.heightAnchor.constraint(equalToConstant: view.frame.height)
         ])
     }
     
