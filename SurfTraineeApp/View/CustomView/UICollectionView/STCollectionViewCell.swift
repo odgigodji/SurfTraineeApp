@@ -16,6 +16,7 @@ class STCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+//        layer.cornerRadius = 32
 //        backgroundColor = .white
 //        self.translatesAutoresizingMaskIntoConstraints = false
         

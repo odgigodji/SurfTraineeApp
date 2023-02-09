@@ -22,7 +22,6 @@ final class STTraineeView: UIView {
         
         configureTopLabel()
         configureCollectionView()
-
     }
     
     required init?(coder: NSCoder) {
@@ -44,7 +43,7 @@ final class STTraineeView: UIView {
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.topAnchor.constraint(equalTo: topLabel.bottomAnchor, constant: 10),
             
-            collectionView.heightAnchor.constraint(equalToConstant: 80)
+            collectionView.heightAnchor.constraint(equalToConstant: 150)
         ])
     }
 }

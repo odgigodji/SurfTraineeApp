@@ -51,19 +51,19 @@ class STButton: UIButton {
     func configureRegularButton() {
         titleLabel?.font = STFonts.medium14
         setTitleColor(.black, for: .normal)
-//        titleLabel?.backgroundColor = .black
-        layer.cornerRadius = 32
         backgroundColor = UIColor.gray
         
-        NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 60),
-            widthAnchor.constraint(equalToConstant: 100)
-        ])
-//        sizeToFit()
+//        NSLayoutConstraint.activate([
+//            heightAnchor.constraint(equalToConstant: 60),
+//            widthAnchor.constraint(equalToConstant: 100)
+//        ])
+        
+        sizeToFit()
+        layer.cornerRadius = 32
 //        print("WIDTH \(frame.width)")
         
 //        NSLayoutConstraint.activate([
-            //FIXME: - dynamic width
+//            FIXME: - dynamic width
 //            heightAnchor.constraint(equalToConstant: 44),
 //            widthAnchor.constraint(equalToConstant: 100)
 //        ])
