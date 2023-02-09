@@ -51,6 +51,7 @@ class STButton: UIButton {
     func configureRegularButton() {
         titleLabel?.font = STFonts.medium14
         setTitleColor(.black, for: .normal)
+        layer.cornerRadius = 12
         backgroundColor = UIColor.gray
         
 //        NSLayoutConstraint.activate([
@@ -59,7 +60,6 @@ class STButton: UIButton {
 //        ])
         
         sizeToFit()
-        layer.cornerRadius = 32
 //        print("WIDTH \(frame.width)")
         
 //        NSLayoutConstraint.activate([

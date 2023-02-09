@@ -11,7 +11,7 @@ class STCollectionView: UICollectionView, UICollectionViewDelegate,
 UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
 //    let cells = ["ios", "android", "pm"]
-    let cells = [STButton(type: .regular, title: "IOS"), STButton(type: .regular, title: "Android"), STButton(title: "Design"), STButton(title: "QA")]
+    let cells = [STButton(type: .regular, title: "IOS"), STButton(type: .regular, title: "Android"), STButton(title: "Design"), STButton(title: "QA")] + [STButton(type: .regular, title: "PM"), STButton(type: .regular, title: "UX"), STButton(title: "UI"), STButton(title: "Test")]
     
     init() {
         let layout = UICollectionViewFlowLayout()
@@ -19,7 +19,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         super.init(frame: .zero, collectionViewLayout: layout)
         self.translatesAutoresizingMaskIntoConstraints = false
         
-        backgroundColor = .white
+        backgroundColor = .green
         delegate = self
         dataSource = self
         register(STCollectionViewCell.self, forCellWithReuseIdentifier: STCollectionViewCell.id)
@@ -45,8 +45,8 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //MARK: - height and width button in collecitonView
-        return CGSize(width: 100, height: 100)
+        //MARK: - height and width cell in collecitonView
+        return CGSize(width: 71, height: 44)
     }
     
 
