@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA1C471B2955FD8B00AEB8FA /* PresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C471A2955FD8B00AEB8FA /* PresenterInput.swift */; };
 		FA49F91929950958004C0CBF /* STButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F91829950958004C0CBF /* STButton.swift */; };
 		FA49F91B29951434004C0CBF /* STButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F91A29951434004C0CBF /* STButtonType.swift */; };
 		FA49F91D2995196C004C0CBF /* STMainBottomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F91C2995196C004C0CBF /* STMainBottomStackView.swift */; };
@@ -15,7 +14,6 @@
 		FA49F92129954747004C0CBF /* STTraineeTopStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F92029954747004C0CBF /* STTraineeTopStackView.swift */; };
 		FA49F92629956F0D004C0CBF /* STCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F92529956F0D004C0CBF /* STCollectionViewModel.swift */; };
 		FA49F92829957097004C0CBF /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F92729957097004C0CBF /* Dynamic.swift */; };
-		FA49F92C29957254004C0CBF /* STButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F92B29957254004C0CBF /* STButtonViewModel.swift */; };
 		FA49F92E29964AF2004C0CBF /* STTraineeBottomStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F92D29964AF2004C0CBF /* STTraineeBottomStack.swift */; };
 		FA49F930299654FB004C0CBF /* STTwoRowCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F92F299654FB004C0CBF /* STTwoRowCollectionView.swift */; };
 		FA49F93329965DBA004C0CBF /* STConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F93229965DBA004C0CBF /* STConstants.swift */; };
@@ -24,10 +22,7 @@
 		FA5D5E4A2912D5AF00066241 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D5E492912D5AF00066241 /* SceneDelegate.swift */; };
 		FA5D5E4C2912D5AF00066241 /* STMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D5E4B2912D5AF00066241 /* STMainViewController.swift */; };
 		FA5D5E512912D5B100066241 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA5D5E502912D5B100066241 /* Assets.xcassets */; };
-		FAC814752912DC53006B3130 /* MainViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC814742912DC53006B3130 /* MainViewPresenter.swift */; };
 		FAC814782912DC6F006B3130 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC814772912DC6F006B3130 /* DataManager.swift */; };
-		FAC8147F2912EBB4006B3130 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8147E2912EBB4006B3130 /* Assembly.swift */; };
-		FAC814952913B416006B3130 /* PresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC814932913B416006B3130 /* PresenterOutput.swift */; };
 		FAE416882993D3A4000484E3 /* STTraineeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE416872993D3A4000484E3 /* STTraineeView.swift */; };
 		FAE4168C29941085000484E3 /* UIView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4168B29941085000484E3 /* UIView + Ext.swift */; };
 		FAE4168E2994142A000484E3 /* STLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE4168D2994142A000484E3 /* STLabel.swift */; };
@@ -38,7 +33,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FA1C471A2955FD8B00AEB8FA /* PresenterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterInput.swift; sourceTree = "<group>"; };
 		FA49F91829950958004C0CBF /* STButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STButton.swift; sourceTree = "<group>"; };
 		FA49F91A29951434004C0CBF /* STButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STButtonType.swift; sourceTree = "<group>"; };
 		FA49F91C2995196C004C0CBF /* STMainBottomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STMainBottomStackView.swift; sourceTree = "<group>"; };
@@ -46,7 +40,6 @@
 		FA49F92029954747004C0CBF /* STTraineeTopStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STTraineeTopStackView.swift; sourceTree = "<group>"; };
 		FA49F92529956F0D004C0CBF /* STCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STCollectionViewModel.swift; sourceTree = "<group>"; };
 		FA49F92729957097004C0CBF /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
-		FA49F92B29957254004C0CBF /* STButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STButtonViewModel.swift; sourceTree = "<group>"; };
 		FA49F92D29964AF2004C0CBF /* STTraineeBottomStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STTraineeBottomStack.swift; sourceTree = "<group>"; };
 		FA49F92F299654FB004C0CBF /* STTwoRowCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STTwoRowCollectionView.swift; sourceTree = "<group>"; };
 		FA49F93229965DBA004C0CBF /* STConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STConstants.swift; sourceTree = "<group>"; };
@@ -57,10 +50,7 @@
 		FA5D5E4B2912D5AF00066241 /* STMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STMainViewController.swift; sourceTree = "<group>"; };
 		FA5D5E502912D5B100066241 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA5D5E552912D5B100066241 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FAC814742912DC53006B3130 /* MainViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewPresenter.swift; sourceTree = "<group>"; };
 		FAC814772912DC6F006B3130 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		FAC8147E2912EBB4006B3130 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
-		FAC814932913B416006B3130 /* PresenterOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterOutput.swift; sourceTree = "<group>"; };
 		FAE416862993C62E000484E3 /* goals.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = goals.md; sourceTree = "<group>"; };
 		FAE416872993D3A4000484E3 /* STTraineeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STTraineeView.swift; sourceTree = "<group>"; };
 		FAE4168B29941085000484E3 /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
@@ -115,7 +105,6 @@
 			children = (
 				FA49F92A299570A5004C0CBF /* Bindings */,
 				FA49F92529956F0D004C0CBF /* STCollectionViewModel.swift */,
-				FA49F92B29957254004C0CBF /* STButtonViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -152,7 +141,6 @@
 				FAE4168A29941042000484E3 /* Extension */,
 				FA5D5E5B2912D5CE00066241 /* Support */,
 				FAC814762912DC63006B3130 /* Managers */,
-				FAC814732912DC1C006B3130 /* MainPresenter */,
 				FA49F92429956EE9004C0CBF /* ViewModels */,
 				FAC814722912DC17006B3130 /* View */,
 			);
@@ -166,7 +154,6 @@
 				FA5D5E502912D5B100066241 /* Assets.xcassets */,
 				FA5D5E472912D5AF00066241 /* AppDelegate.swift */,
 				FA5D5E492912D5AF00066241 /* SceneDelegate.swift */,
-				FAC8147E2912EBB4006B3130 /* Assembly.swift */,
 				FAE416862993C62E000484E3 /* goals.md */,
 				FA49F9342996A406004C0CBF /* LaunchScreen.storyboard */,
 			);
@@ -180,16 +167,6 @@
 				FA49F9172995060D004C0CBF /* Core */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		FAC814732912DC1C006B3130 /* MainPresenter */ = {
-			isa = PBXGroup;
-			children = (
-				FAC814742912DC53006B3130 /* MainViewPresenter.swift */,
-				FAC814932913B416006B3130 /* PresenterOutput.swift */,
-				FA1C471A2955FD8B00AEB8FA /* PresenterInput.swift */,
-			);
-			path = MainPresenter;
 			sourceTree = "<group>";
 		};
 		FAC814762912DC63006B3130 /* Managers */ = {
@@ -320,7 +297,6 @@
 				FA5D5E4C2912D5AF00066241 /* STMainViewController.swift in Sources */,
 				FAE4169429941814000484E3 /* STFonts.swift in Sources */,
 				FA49F91B29951434004C0CBF /* STButtonType.swift in Sources */,
-				FAC8147F2912EBB4006B3130 /* Assembly.swift in Sources */,
 				FA49F91F29951F9E004C0CBF /* STColors.swift in Sources */,
 				FAC814782912DC6F006B3130 /* DataManager.swift in Sources */,
 				FA49F930299654FB004C0CBF /* STTwoRowCollectionView.swift in Sources */,
@@ -334,13 +310,9 @@
 				FA5D5E4A2912D5AF00066241 /* SceneDelegate.swift in Sources */,
 				FAE416882993D3A4000484E3 /* STTraineeView.swift in Sources */,
 				FA49F92E29964AF2004C0CBF /* STTraineeBottomStack.swift in Sources */,
-				FAC814752912DC53006B3130 /* MainViewPresenter.swift in Sources */,
 				FA49F92129954747004C0CBF /* STTraineeTopStackView.swift in Sources */,
-				FA49F92C29957254004C0CBF /* STButtonViewModel.swift in Sources */,
-				FAC814952913B416006B3130 /* PresenterOutput.swift in Sources */,
 				FA49F91929950958004C0CBF /* STButton.swift in Sources */,
 				FAE4169B2994F0FA000484E3 /* STCollectionView.swift in Sources */,
-				FA1C471B2955FD8B00AEB8FA /* PresenterInput.swift in Sources */,
 				FA49F93329965DBA004C0CBF /* STConstants.swift in Sources */,
 				FAE4168E2994142A000484E3 /* STLabel.swift in Sources */,
 			);

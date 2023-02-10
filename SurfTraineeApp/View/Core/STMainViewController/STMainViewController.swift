@@ -9,8 +9,6 @@ import UIKit
 
 final class STMainViewController: UIViewController {
     
-    var output: PresenterOutput!
-    
     private var imageView   = UIImageView(image: UIImage(named: "background"))
     private var scrollView  = UIScrollView()
     private var contentView = STTraineeView(frame: .zero)
@@ -91,11 +89,4 @@ final class STMainViewController: UIViewController {
     }
 }
 
-//MARK: - Input
-extension STMainViewController: PresenterInput {
-    func showNumbers(_ numbers: [String]) {
-        print(numbers)
-        //передать buttons с data managera to collecitonView
-    }
-}
 
