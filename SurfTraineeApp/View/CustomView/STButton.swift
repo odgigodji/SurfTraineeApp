@@ -11,7 +11,7 @@ import UIKit
 /// custom Button uses in application
 class STButton: UIButton {
     
-    var viewModel = STButtonViewModel()
+//    var viewModel = STButtonViewModel()
 
     private var isPressed = false
 

@@ -37,7 +37,7 @@ final class STTraineeBottomStack: UIStackView {
         addArrangedSubview(twoRowCollectionView)
         
         NSLayoutConstraint.activate([
-            twoRowCollectionView.heightAnchor.constraint(equalToConstant: 100)
+            twoRowCollectionView.heightAnchor.constraint(equalToConstant: 102)
         ])
     }
 }

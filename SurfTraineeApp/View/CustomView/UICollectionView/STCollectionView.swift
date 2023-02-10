@@ -71,14 +71,13 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     }
     
     func scrollViewDidEndDragging(_ collectionView: UIScrollView, willDecelerate decelerate: Bool) {
-//        let offsetX         = collectionView.contentOffset.x
-//        let contentWidth   = collectionView.contentSize.width
-//        let widthOfDisplay  = self.frame.size.width
-//
-//        print("offsetX = \(offsetX)")
-//        print("contentWidth = \(contentWidth)")
-//        print("widthOfDispay = \(widthOfDisplay)")
-        
+        let offsetX         = collectionView.contentOffset.x
+        let contentWidth   = collectionView.contentSize.width
+        let widthOfDisplay  = self.frame.size.width
+
+        print("offsetX = \(offsetX)")
+        print("contentWidth = \(contentWidth)")
+        print("widthOfDispay = \(widthOfDisplay)")
 //        let heightOfDisplay = collecionView.frame.size.t
         
         
