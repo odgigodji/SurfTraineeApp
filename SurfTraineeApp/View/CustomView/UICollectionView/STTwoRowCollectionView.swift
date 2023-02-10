@@ -7,56 +7,26 @@
 
 import UIKit
 
-class LeftAlignCellCollectionFlowLayout: UICollectionViewFlowLayout {
 
-    private var cellHeight: CGFloat = 44
-    init(cellHeight: CGFloat) {
-        super.init()
-        self.cellHeight = cellHeight
-    }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
+class LeftAlignedCollectionViewFlowLayout: UICollectionViewFlowLayout {
 
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        guard let attributes = super.layoutAttributesForElements(in: rect) else { return nil }
-        guard let collectionView = self.collectionView else { return nil }
+        let attributes = super.layoutAttributesForElements(in: rect)
 
-        self.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-
-        var newAttributes = attributes
-        var leftMargin = self.sectionInset.left
+        var leftMargin = sectionInset.left
         var maxY: CGFloat = -1.0
-
-        let availableWidth: CGFloat = collectionView.frame.width
-        let layout = collectionView.collectionViewLayout
-
-        for attribute in attributes {
-            if let cellAttribute = layout.layoutAttributesForItem(at: attribute.indexPath) {
-                if cellAttribute.frame.width > availableWidth {
-                    cellAttribute.frame.origin.x = 0
-                    cellAttribute.frame.size = CGSize(width: availableWidth, height: cellHeight)
-                }
-                else {
-                    if cellAttribute.frame.origin.y >= maxY {
-                        leftMargin = self.sectionInset.left
-                    }
-
-                    var frame = cellAttribute.frame
-                    frame.origin.x = leftMargin
-                    frame.size.height = cellHeight
-                    cellAttribute.frame = frame
-
-                    leftMargin += cellAttribute.frame.width + self.minimumInteritemSpacing
-                    maxY = max(cellAttribute.frame.maxY , maxY)
-                }
-
-                newAttributes.append(cellAttribute)
+        attributes?.forEach { layoutAttribute in
+            if layoutAttribute.frame.origin.y >= maxY {
+                leftMargin = sectionInset.left
             }
+
+            layoutAttribute.frame.origin.x = leftMargin
+
+            leftMargin += layoutAttribute.frame.width + minimumInteritemSpacing
+            maxY = max(layoutAttribute.frame.maxY , maxY)
         }
 
-        return newAttributes
+        return attributes
     }
 }
 
@@ -70,21 +40,25 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var viewModel = STCollectionViewModel()
     
     init() {
-//        let flowLayout = LeftAlignCellCollectionFlowLayout(cellHeight: 40)
-//        flowLayout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-//        flowLayout.minimumInteritemSpacing = 12
-//        flowLayout.minimumLineSpacing = 12
-//        flowLayout.scrollDirection = .vertical
+//        let layout = LeftAlignCellCollectionFlowLayout(cellHeight: 40)
+//        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+//        layout.minimumInteritemSpacing = 12
+//        layout.minimumLineSpacing = 12
 
         
+        let layout = LeftAlignedCollectionViewFlowLayout()
+//        guard layoutAttribute.representedElementCategory == .cell else {
+//            return
+//        }
         
         
         
         
-        let layout                                  = UICollectionViewFlowLayout()
+//        let layout                                  = UICollectionViewFlowLayout()
+//
+//        layout.minimumLineSpacing = 12
+//        layout.minimumInteritemSpacing = 12
         
-        layout.minimumLineSpacing = 12
-        layout.minimumInteritemSpacing = 12
 //        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
 //        let width = UIScreen.main.bounds.width
 //        let padding: CGFloat            = 12
@@ -154,41 +128,3 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
 }
 
-
-extension UICollectionViewLayout {
-    static func fixedSpacedFlowLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .estimated(50),
-            heightDimension: .estimated(50)
-        )
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.edgeSpacing = NSCollectionLayoutEdgeSpacing(
-            leading: .fixed(6),
-            top: .fixed(12),
-            trailing: .fixed(0),
-            bottom: .fixed(6)
-        )
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .estimated(100)
-        )
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        let section = NSCollectionLayoutSection(group: group)
-        return UICollectionViewCompositionalLayout(section: section)
-    }
-    
-    
-    static func createThreeColumnFlowLayout(in view: UIView) -> UICollectionViewFlowLayout {
-        let width                       = view.bounds.width
-        let padding: CGFloat            = 12
-        let minimumItemSpacing: CGFloat = 10
-        let availableWidth              = width - (padding * 2) - (minimumItemSpacing * 2)
-        let itemWidth                   = availableWidth / 3
-        
-        let flowLayout                  = UICollectionViewFlowLayout()
-        flowLayout.sectionInset         = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
-        flowLayout.itemSize             = CGSize(width: itemWidth, height: itemWidth + 40)
-        
-        return flowLayout
-    }
-}
