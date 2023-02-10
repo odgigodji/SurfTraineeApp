@@ -9,8 +9,7 @@ import UIKit
 
 final class STTraineeBottomStack: UIStackView {
     
-//    var topLabel = STLabel(text: "Стажировка в Surf", font: STFonts.bold24, textColor: .black)
-    var label = STLabel(text: "Получай стипендию, выстраивай удобный график, работай на современном железе.", font: STFonts.regular14, textColor: .gray)
+    var label = STLabel(text: STText.secondary2, font: STFonts.regular14, textColor: .gray)
     private var twoRowCollectionView = STTwoRowCollectionView()
     
     override init(frame: CGRect) {

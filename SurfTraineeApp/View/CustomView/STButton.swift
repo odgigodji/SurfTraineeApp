@@ -19,7 +19,6 @@ class STButton: UIButton {
         super.init(frame: frame)
         
         translatesAutoresizingMaskIntoConstraints   = false
-        isUserInteractionEnabled                    = false
         
         sizeToFit()
     }
@@ -78,6 +77,7 @@ class STButton: UIButton {
         setTitleColor(.black, for: .normal)
         layer.cornerRadius = 12
         backgroundColor = STColors.lightGray
+        isUserInteractionEnabled                    = false
         
         sizeToFit()
     }

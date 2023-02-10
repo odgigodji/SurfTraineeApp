@@ -9,6 +9,8 @@ import UIKit
 
 final class STMainBottomStackView: UIStackView {
     
+    weak var delegate: STMainViewController?
+    
     private var button = STButton(type: .big, title: "Отправить заявку")
     private var label = STLabel(text: "Xочешь к нам?", font: STFonts.regular14, textColor: .gray)
     
@@ -17,6 +19,8 @@ final class STMainBottomStackView: UIStackView {
         translatesAutoresizingMaskIntoConstraints = false
         
         configureStackView()
+        
+        button.addTarget(self, action: #selector(tap), for: .touchUpInside)
     }
     
     required init(coder: NSCoder) {
@@ -34,5 +38,9 @@ final class STMainBottomStackView: UIStackView {
        
         addArrangedSubview(label)
         addArrangedSubview(button)
+    }
+    
+    @objc private func tap() {
+        print("show alert")
     }
 }

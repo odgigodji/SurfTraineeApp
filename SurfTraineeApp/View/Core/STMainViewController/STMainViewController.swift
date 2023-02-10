@@ -12,9 +12,7 @@ final class STMainViewController: UIViewController {
     private var imageView   = UIImageView(image: UIImage(named: "background"))
     private var scrollView  = UIScrollView()
     private var contentView = STTraineeView(frame: .zero)
-    
-//    private var button = STButton(type: .big, title: "Отправить заявку")
-    private var bottomView = STMainBottomStackView()
+    private var bottomStackView = STMainBottomStackView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +23,10 @@ final class STMainViewController: UIViewController {
         configureScrollView()
         configureMainView()
         
-        configureBottomView()
+        configureBottomStackView()
     }
     
     //MARK: - Private
-    private func getTraineeDirections() {
-//        output.getTraineeDirections()
-    }
     
     /// Layout UI
     private func configureImageView() {
@@ -74,13 +69,14 @@ final class STMainViewController: UIViewController {
         ])
     }
     
-    private func configureBottomView() {
-        view.addSubview(bottomView)
+    private func configureBottomStackView() {
+        view.addSubview(bottomStackView)
+        bottomStackView.delegate = self
         
         NSLayoutConstraint.activate([
-            bottomView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -58),
-            bottomView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            bottomView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            bottomStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -58),
+            bottomStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            bottomStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
 //            bottomView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
 //            bottomView.widthAnchor.constraint(equalToConstant: 219),
