@@ -12,20 +12,15 @@ import UIKit
 final class STTraineeView: UIView {
 
     var topStackView = STTraineeTopStackView()
-    var bottomStackView = STMainBottomStackView()
+    var bottomStackView = STTraineeBottomStack()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.translatesAutoresizingMaskIntoConstraints = false
-//        self.addSubviews(topLabel, middleLabel, collectionView)
-        
-//        configureTopLabel()
-//        configureMiddleLabel()
-//        configureCollectionView()
-        addSubviews(topStackView)
+        self.addSubviews(topStackView, bottomStackView)
         
         configureTopStackView()
-//        configureBottomStackView()
+        configureBottomStackView()
     }
     
     required init?(coder: NSCoder) {
@@ -34,31 +29,7 @@ final class STTraineeView: UIView {
     
     
     //MARK: - Private
-//    private func configureTopLabel() {
-//        NSLayoutConstraint.activate([
-//            topLabel.topAnchor.constraint(equalTo: topAnchor, constant: 24),
-//            topLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20)
-//        ])
-//    }
-//
-//    private func configureMiddleLabel() {
-//        NSLayoutConstraint.activate([
-//            middleLabel.topAnchor.constraint(equalTo: topLabel.bottomAnchor, constant: 12),
-//            middleLabel.leadingAnchor.constraint(equalTo: topLabel.leadingAnchor),
-//            middleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
-//        ])
-//    }
-//
-//    private func configureCollectionView() {
-//        NSLayoutConstraint.activate([
-//            collectionView.leadingAnchor.constraint(equalTo: topLabel.leadingAnchor),
-//            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-//            collectionView.topAnchor.constraint(equalTo: middleLabel.bottomAnchor, constant: 12),
-//
-//            collectionView.heightAnchor.constraint(equalToConstant: 44)
-//        ])
-//    }
-    
+
     private func configureTopStackView() {
         NSLayoutConstraint.activate([
             topStackView.topAnchor.constraint(equalTo: topAnchor, constant: 24),
@@ -71,7 +42,7 @@ final class STTraineeView: UIView {
         NSLayoutConstraint.activate([
             bottomStackView.topAnchor.constraint(equalTo: topStackView.bottomAnchor, constant: 24),
             bottomStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            topStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+            bottomStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
         ])
     }
 }

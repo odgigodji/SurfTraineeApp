@@ -30,17 +30,9 @@ final class STTraineeTopStackView: UIStackView {
         axis            = .vertical
         distribution    = .fillEqually
         spacing         = 6
-//        alignment       = .f
-        
-//        backgroundColor = .green
        
         addArrangedSubview(topLabel)
         addArrangedSubview(middleLabel)
         addArrangedSubview(collectionView)
-        
-//        NSLayoutConstraint.activate([
-//            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -20),
-//            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 20)
-//        ])
     }
 }
