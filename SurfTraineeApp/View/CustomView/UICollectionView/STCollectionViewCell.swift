@@ -16,6 +16,7 @@ class STCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        backgroundColor = .white
 //        layer.cornerRadius = 32
 //        backgroundColor = .white
 //        self.translatesAutoresizingMaskIntoConstraints = false
@@ -38,10 +39,6 @@ class STCollectionViewCell: UICollectionViewCell {
     func configureButton() {
         guard let button = button else { return }
         addSubview(button)
-        backgroundColor = .white
-//        layer.cornerRadius = 32
-//        myView.translatesAutoresizingMaskIntoConstraints = false
-//        myView.backgroundColor = .yellow
         
         NSLayoutConstraint.activate([
             button.leadingAnchor.constraint(equalTo: leadingAnchor),

@@ -11,7 +11,7 @@ final class STTraineeBottomStack: UIStackView {
     
 //    var topLabel = STLabel(text: "Стажировка в Surf", font: STFonts.bold24, textColor: .black)
     var label = STLabel(text: "Получай стипендию, выстраивай удобный график, работай на современном железе.", font: STFonts.regular14, textColor: .gray)
-    private var collectionView = STCollectionView()
+    private var twoRowCollectionView = STTwoRowCollectionView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,8 +31,10 @@ final class STTraineeBottomStack: UIStackView {
         distribution    = .fillEqually
         spacing         = 6
 
+//        backgroundColor = .green
+        
         addArrangedSubview(label)
-        addArrangedSubview(collectionView)
+        addArrangedSubview(twoRowCollectionView)
         
 //        NSLayoutConstraint.activate([
 //            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -20),

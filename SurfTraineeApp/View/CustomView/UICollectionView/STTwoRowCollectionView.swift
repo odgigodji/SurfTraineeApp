@@ -1,25 +1,23 @@
 //
-//  STCollectionView.swift
+//  STTwoRowCollectionView.swift
 //  SurfTraineeApp
 //
-//  Created by Nikita Evdokimov on 09.02.23.
+//  Created by Nikita Evdokimov on 10.02.23.
 //
 
 import UIKit
 
-
-class STCollectionView: UICollectionView, UICollectionViewDelegate,
+class STTwoRowCollectionView: UICollectionView, UICollectionViewDelegate,
 UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     //MARK: - test buttons
-    var cells = [STButton(type: .regular, title: "IOS"), STButton(type: .regular, title: "Androidaksdjfklasjdklfhkljh"), STButton(title: "Design"), STButton(title: "QA")] + [STButton(type: .regular, title: "PM"), STButton(type: .regular, title: "UX"), STButton(title: "UI"), STButton(title: "Test")]
+    var cells = [STButton]()
     
     var viewModel = STCollectionViewModel()
     
     init() {
         let layout                                  = UICollectionViewFlowLayout()
         layout.scrollDirection                      = .horizontal
-        layout.minimumLineSpacing                   = 12
         super.init(frame: .zero, collectionViewLayout: layout)
         
         cells = viewModel.createButtonsWithTraineeDirections()
@@ -34,10 +32,10 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     }
     
     
-    private func getButtons(strings: [String]) -> [STButton] {
-        let buttons = strings.map { STButton(title: $0) }
-        return buttons
-    }
+//    private func getButtons(strings: [String]) -> [STButton] {
+//        let buttons = strings.map { STButton(title: $0) }
+//        return buttons
+//    }
     
     
     required init(coder: NSCoder) {
@@ -58,15 +56,13 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         return cell
     }
     
-    
+    //MARK: - height and width cell in collecitonView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //MARK: - height and width cell in collecitonView
         return CGSize(width: 71, height: 44)
     }
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("DIDSELECTITEMAT: \(cells[indexPath.row].titleLabel?.text!)")
         
         moveElemToLeftBorder(indexPath: indexPath)
         cells[indexPath.row].didPressed()
