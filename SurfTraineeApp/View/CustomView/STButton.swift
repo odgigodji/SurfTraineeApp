@@ -31,7 +31,7 @@ class STButton: UIButton {
     convenience init(type: STButtonType = .regular, title: String) {
         self.init(frame: .zero)
         
-        let modifiedTitle = " " + title + " "
+        let modifiedTitle = title
         setTitle(modifiedTitle, for: .normal)
         
         switch type {
@@ -41,19 +41,7 @@ class STButton: UIButton {
             configureRegularButton()
         }
     }
-    
-    private func layoutButton() {
-        
-    }
-    
-//    private func bindViewModel() {
-//        viewModel.pressState?.bind { button in
-//            DispatchQueue.main.async { [weak self] in
-//                self?.didPressStateChanged()
-//            }
-//        }
-//    }
-    
+
     func didPressed() {
         isPressed = !isPressed
         didPressStateChanged()
@@ -73,7 +61,7 @@ class STButton: UIButton {
     }
     
     /// Layout UI
-    func configureBigButton() {
+    private func configureBigButton() {
         titleLabel?.font = STFonts.medium16
         setTitleColor(.white, for: .normal)
         layer.cornerRadius = 30
@@ -85,7 +73,7 @@ class STButton: UIButton {
         ])
     }
     
-    func configureRegularButton() {
+    private func configureRegularButton() {
         titleLabel?.font = STFonts.medium14
         setTitleColor(.black, for: .normal)
         layer.cornerRadius = 12

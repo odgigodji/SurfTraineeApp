@@ -59,7 +59,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         //MARK: - height and width cell in collecitonView
         
         let size = cells[indexPath.row].frame.size
-        let width = size.width + 40
+        let width = size.width + 44
         return CGSize(width: width, height: 44)
     }
     

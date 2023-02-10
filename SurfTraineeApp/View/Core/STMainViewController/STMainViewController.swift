@@ -68,7 +68,7 @@ final class STMainViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             //FIXME: - constant
-            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 500),
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 450),
             
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
