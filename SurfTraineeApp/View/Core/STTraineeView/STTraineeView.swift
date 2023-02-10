@@ -34,7 +34,7 @@ final class STTraineeView: UIView {
         NSLayoutConstraint.activate([
             topStackView.topAnchor.constraint(equalTo: topAnchor, constant: 24),
             topStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            topStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+            topStackView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
     

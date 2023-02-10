@@ -10,7 +10,7 @@ import UIKit
 final class STTraineeTopStackView: UIStackView {
     
     var topLabel = STLabel(text: "Стажировка в Surf", font: STFonts.bold24, textColor: .black)
-    var middleLabel = STLabel(text: "Работай над реальными задачами под руководством опытного наставника и получи возможность стать частью команды.", font: STFonts.regular14, textColor: .gray)
+    var middleLabel = STLabel(text: "Работай над реальными задачами под руководством опытного наставника и получи возможность стать частью команды мечты.", font: STFonts.regular14, textColor: .gray)
     private var collectionView = STCollectionView()
     
     override init(frame: CGRect) {
@@ -28,9 +28,13 @@ final class STTraineeTopStackView: UIStackView {
     //MARK: - Private
     private func configureStackView() {
         axis            = .vertical
-        distribution    = .fillEqually
+        distribution    = .fillProportionally
         spacing         = 12
        
+        NSLayoutConstraint.activate([
+            collectionView.heightAnchor.constraint(equalToConstant: 44)
+        ])
+        
         addArrangedSubview(topLabel)
         addArrangedSubview(middleLabel)
         addArrangedSubview(collectionView)
