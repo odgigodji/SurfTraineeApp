@@ -12,6 +12,7 @@ import UIKit
 final class STTraineeView: UIView {
 
     var topStackView = STTraineeTopStackView()
+    var bottomStackView = STMainBottomStackView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,6 +25,7 @@ final class STTraineeView: UIView {
         addSubviews(topStackView)
         
         configureTopStackView()
+//        configureBottomStackView()
     }
     
     required init?(coder: NSCoder) {
@@ -61,6 +63,14 @@ final class STTraineeView: UIView {
         NSLayoutConstraint.activate([
             topStackView.topAnchor.constraint(equalTo: topAnchor, constant: 24),
             topStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            topStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+        ])
+    }
+    
+    private func configureBottomStackView() {
+        NSLayoutConstraint.activate([
+            bottomStackView.topAnchor.constraint(equalTo: topStackView.bottomAnchor, constant: 24),
+            bottomStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             topStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
         ])
     }

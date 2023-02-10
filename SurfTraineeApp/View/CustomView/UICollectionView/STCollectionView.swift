@@ -67,9 +67,8 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("DIDSELECTITEMAT: \(cells[indexPath.row].titleLabel?.text!)")
         
+        moveElemToLeftBorder(indexPath: indexPath)
         cells[indexPath.row].didPressed()
-        
-        animateButton(button: cells[indexPath.row], position: indexPath.row)
     }
     
     func scrollViewDidEndDragging(_ collectionView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -90,44 +89,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 //        }
     }
     
-    func animateButton(button: STButton, position: Int) {
-        //        let layout = UICollectionViewFlowLayout()
-        //        layout.scrollDirection = .horizontal
-        //        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        //        collectionView.setCollectionViewLayout(layout, animated: true)
-        
-        let offsetX         = self.contentOffset.x
-        let contentWidth    = self.contentSize.width
-        let widthOfDisplay  = self.frame.size.width
-        
-//        print("offsetX = \(offsetX)")
-//        print("contentWidth = \(contentWidth)")
-//        print("widthOfDispay = \(widthOfDisplay)")
-        
-
-        
-//        let singleDistance = button.frame.width
-//        if position == 0 {
-//            return
-//        }
-//
-//        if position == 1 {
-//        UIView.animate(withDuration: 0.5) {
-//            self.contentOffset.x += (singleDistance * CGFloat(position))
-//        }
-//        }
-//        let firstElem = button[position]
-//        let contentHeight   = collectionView.contentSize.height
-        
-
-        
-//        if firstPosition
-        
-        UIView.animate(withDuration: 0.4) {
-//            DispatchQueue.main.async {
-                self.contentOffset.x += button.frame.width
-            self.layoutIfNeeded()
-//            }
-        }
+    private func moveElemToLeftBorder(indexPath: IndexPath) {
+        scrollToItem(at: indexPath, at: .left, animated: true)
     }
 }
