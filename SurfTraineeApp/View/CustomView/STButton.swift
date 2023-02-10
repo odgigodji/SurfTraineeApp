@@ -20,6 +20,8 @@ class STButton: UIButton {
         
         translatesAutoresizingMaskIntoConstraints   = false
         isUserInteractionEnabled                    = false
+        
+        sizeToFit()
     }
     
     required init?(coder: NSCoder) {
@@ -28,7 +30,9 @@ class STButton: UIButton {
     
     convenience init(type: STButtonType = .regular, title: String) {
         self.init(frame: .zero)
-        setTitle(title, for: .normal)
+        
+        let modifiedTitle = " " + title + " "
+        setTitle(modifiedTitle, for: .normal)
         
         switch type {
         case .big:
@@ -36,6 +40,10 @@ class STButton: UIButton {
         case .regular:
             configureRegularButton()
         }
+    }
+    
+    private func layoutButton() {
+        
     }
     
 //    private func bindViewModel() {
@@ -83,19 +91,6 @@ class STButton: UIButton {
         layer.cornerRadius = 12
         backgroundColor = STColors.lightGray
         
-//        sizeToFit()
-//        NSLayoutConstraint.activate([
-//            heightAnchor.constraint(equalToConstant: 60),
-//            widthAnchor.constraint(equalToConstant: 100)
-//        ])
-        
-//        print("WIDTH \(frame.width)")
-        
-//        NSLayoutConstraint.activate([
-//            FIXME: - dynamic width
-//            heightAnchor.constraint(equalToConstant: 44),
-//            widthAnchor.constraint(equalToConstant: 100)
-//        ])
+        sizeToFit()
     }
-
 }

@@ -12,7 +12,7 @@ class STCollectionView: UICollectionView, UICollectionViewDelegate,
 UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     //MARK: - test buttons
-    var cells = [STButton(type: .regular, title: "IOS"), STButton(type: .regular, title: "Androidaksdjfklasjdklfhkljh"), STButton(title: "Design"), STButton(title: "QA")] + [STButton(type: .regular, title: "PM"), STButton(type: .regular, title: "UX"), STButton(title: "UI"), STButton(title: "Test")]
+    var cells = [STButton]()
     
     var viewModel = STCollectionViewModel()
     
@@ -22,23 +22,19 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         layout.minimumLineSpacing                   = 12
         super.init(frame: .zero, collectionViewLayout: layout)
         
+        
+        
         cells = viewModel.createButtonsWithTraineeDirections()
         
         translatesAutoresizingMaskIntoConstraints   = false
         showsHorizontalScrollIndicator              = false
         backgroundColor                             = .white
+//        backgroundColor = .green
         
         delegate                                    = self
         dataSource                                  = self
         register(STCollectionViewCell.self, forCellWithReuseIdentifier: STCollectionViewCell.id)
     }
-    
-    
-    private func getButtons(strings: [String]) -> [STButton] {
-        let buttons = strings.map { STButton(title: $0) }
-        return buttons
-    }
-    
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -54,32 +50,35 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         
         cell.button = cells[indexPath.row]
         cell.configureButton()
-//        cell.isUserInteractionEnabled = true
         return cell
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //MARK: - height and width cell in collecitonView
-        return CGSize(width: 71, height: 44)
+        
+        let size = cells[indexPath.row].frame.size
+        let width = size.width + 40
+        return CGSize(width: width, height: 44)
     }
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("DIDSELECTITEMAT: \(cells[indexPath.row].titleLabel?.text!)")
+//        print("DIDSELECTITEMAT: \(cells[indexPath.row].titleLabel?.text!)")
         
         moveElemToLeftBorder(indexPath: indexPath)
         cells[indexPath.row].didPressed()
     }
     
     func scrollViewDidEndDragging(_ collectionView: UIScrollView, willDecelerate decelerate: Bool) {
-        let offsetX         = collectionView.contentOffset.x
-        let contentWidth   = collectionView.contentSize.width
-        let widthOfDisplay  = self.frame.size.width
-
-        print("offsetX = \(offsetX)")
-        print("contentWidth = \(contentWidth)")
-        print("widthOfDispay = \(widthOfDisplay)")
+//        let offsetX         = collectionView.contentOffset.x
+//        let contentWidth   = collectionView.contentSize.width
+//        let widthOfDisplay  = self.frame.size.width
+//
+//        print("offsetX = \(offsetX)")
+//        print("contentWidth = \(contentWidth)")
+//        print("widthOfDispay = \(widthOfDisplay)")
+        
 //        let heightOfDisplay = collecionView.frame.size.t
         
         

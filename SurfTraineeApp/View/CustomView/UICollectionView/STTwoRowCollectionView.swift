@@ -62,12 +62,14 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     //MARK: - height and width cell in collecitonView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+//        if indexPath.row == 3 { return CGSize(width: 100, height: 44) }
         return CGSize(width: 71, height: 44)
+//        return cells[indexPath.row].frame.size
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        moveElemToLeftBorder(indexPath: indexPath)
         cells[indexPath.row].didPressed()
     }
     
@@ -87,9 +89,5 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 //            cells += cells
 //            reloadData()
 //        }
-    }
-    
-    private func moveElemToLeftBorder(indexPath: IndexPath) {
-        scrollToItem(at: indexPath, at: .left, animated: true)
     }
 }
