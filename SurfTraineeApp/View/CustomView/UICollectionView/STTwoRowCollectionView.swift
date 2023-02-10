@@ -23,6 +23,8 @@ class LeftAlignedCollectionViewFlowLayout: UICollectionViewFlowLayout {
             layoutAttribute.frame.origin.x = leftMargin
 
             leftMargin += layoutAttribute.frame.width + minimumInteritemSpacing
+            print(minimumInteritemSpacing)
+            print(minimumLineSpacing)
             maxY = max(layoutAttribute.frame.maxY , maxY)
         }
 
@@ -40,40 +42,12 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var viewModel = STCollectionViewModel()
     
     init() {
-//        let layout = LeftAlignCellCollectionFlowLayout(cellHeight: 40)
-//        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-//        layout.minimumInteritemSpacing = 12
-//        layout.minimumLineSpacing = 12
-
         
         let layout = LeftAlignedCollectionViewFlowLayout()
-//        guard layoutAttribute.representedElementCategory == .cell else {
-//            return
-//        }
-        
-        
-        
-        
-//        let layout                                  = UICollectionViewFlowLayout()
-//
-//        layout.minimumLineSpacing = 12
-//        layout.minimumInteritemSpacing = 12
-        
-//        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-//        let width = UIScreen.main.bounds.width
-//        let padding: CGFloat            = 12
-        
-//        let flowLayout                  = UICollectionViewFlowLayout()
-//        layout.sectionInset         = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
-//        flowLayout.itemSize             = CGSize(width: itemWidth, height: itemWidth + 40)
-        
-        
-        
-        
-        
-        
+        layout.minimumInteritemSpacing = 12
+        layout.minimumLineSpacing = 12
+
         super.init(frame: .zero, collectionViewLayout: layout)
-        
         
         cells = viewModel.createButtonsWithTraineeDirections()
         

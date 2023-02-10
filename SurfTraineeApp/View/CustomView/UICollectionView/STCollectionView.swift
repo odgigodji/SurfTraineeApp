@@ -20,6 +20,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         let layout                                  = UICollectionViewFlowLayout()
         layout.scrollDirection                      = .horizontal
         layout.minimumLineSpacing                   = 12
+        layout.minimumInteritemSpacing              = 12
         super.init(frame: .zero, collectionViewLayout: layout)
         
         
