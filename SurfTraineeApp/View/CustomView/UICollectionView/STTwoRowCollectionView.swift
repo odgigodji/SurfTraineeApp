@@ -18,6 +18,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     init() {
         let layout                                  = UICollectionViewFlowLayout()
         layout.scrollDirection                      = .horizontal
+        layout.minimumLineSpacing                   = 12
         super.init(frame: .zero, collectionViewLayout: layout)
         
         cells = viewModel.createButtonsWithTraineeDirections()
@@ -25,10 +26,13 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         translatesAutoresizingMaskIntoConstraints   = false
         showsHorizontalScrollIndicator              = false
         backgroundColor                             = .white
+//        backgroundColor                             = .green
         
         delegate                                    = self
         dataSource                                  = self
         register(STCollectionViewCell.self, forCellWithReuseIdentifier: STCollectionViewCell.id)
+        
+
     }
     
     
@@ -60,7 +64,6 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 71, height: 44)
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         

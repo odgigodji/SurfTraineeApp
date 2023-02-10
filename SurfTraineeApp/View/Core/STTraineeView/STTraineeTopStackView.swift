@@ -29,7 +29,7 @@ final class STTraineeTopStackView: UIStackView {
     private func configureStackView() {
         axis            = .vertical
         distribution    = .fillEqually
-        spacing         = 6
+        spacing         = 12
        
         addArrangedSubview(topLabel)
         addArrangedSubview(middleLabel)

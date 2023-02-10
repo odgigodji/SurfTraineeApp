@@ -28,17 +28,16 @@ final class STTraineeBottomStack: UIStackView {
     //MARK: - Private
     private func configureStackView() {
         axis            = .vertical
-        distribution    = .fillEqually
-        spacing         = 6
+        distribution    = .fillProportionally
+        spacing         = 12
 
 //        backgroundColor = .green
         
         addArrangedSubview(label)
         addArrangedSubview(twoRowCollectionView)
         
-//        NSLayoutConstraint.activate([
-//            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -20),
-//            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 20)
-//        ])
+        NSLayoutConstraint.activate([
+            twoRowCollectionView.heightAnchor.constraint(equalToConstant: 100)
+        ])
     }
 }
