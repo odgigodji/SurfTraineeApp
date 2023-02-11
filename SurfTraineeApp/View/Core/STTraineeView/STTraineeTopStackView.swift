@@ -11,7 +11,9 @@ final class STTraineeTopStackView: UIStackView {
     
     var topLabel = STLabel(text: STText.mainTitle, font: STFonts.bold24, textColor: .black)
     var middleLabel = STLabel(text: STText.secondary1, font: STFonts.regular14, textColor: .gray)
-    private var collectionView = STCollectionView()
+    
+    private var collectionView = STInfinityCollectionView()
+//    private var collectionView = STCollectionView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,7 +34,7 @@ final class STTraineeTopStackView: UIStackView {
         spacing         = 12
        
         NSLayoutConstraint.activate([
-            collectionView.heightAnchor.constraint(equalToConstant: 44)
+            collectionView.heightAnchor.constraint(equalToConstant: 44),
         ])
         
         addArrangedSubview(topLabel)

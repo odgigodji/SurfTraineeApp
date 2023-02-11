@@ -24,13 +24,7 @@ class STCollectionViewCell: UICollectionViewCell {
 //        print("BUTTON \(button.titleLabel?.text)")
 //        configureButton()
     }
-    
-//    convenience init(button: UIButton) {
-//        self.init(frame: .zero)
-//
-//        self.button = button as! STButton
-//        configureButton()
-//    }
+
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

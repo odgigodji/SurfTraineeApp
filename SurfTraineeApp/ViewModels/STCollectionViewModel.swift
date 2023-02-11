@@ -7,14 +7,9 @@
 
 import UIKit
 
-//protocol ObservableViewModelProtocol {
-//    var articles: Dynamic<[String]> { get  set }
-//}
 
-final class STCollectionViewModel {
+final class STCollectionViewModel: STCollectionViewModelProtocol {
     var dataManager = DataManagerImpl()
-    
-//    var traindeeDirections = [String]()
     
     func createButtonsWithTraineeDirections() -> [STButton] {
         let traineeDirections = dataManager.getTraineeDirections()

@@ -37,7 +37,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     //MARK: - test buttons
     var cells = [STButton]()
     
-    var viewModel = STCollectionViewModel()
+    var viewModel: STCollectionViewModelProtocol = STCollectionViewModel()
     
     init() {
         
@@ -52,7 +52,6 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         translatesAutoresizingMaskIntoConstraints   = false
         showsHorizontalScrollIndicator              = false
         backgroundColor                             = .white
-//        backgroundColor                             = .green
         
         delegate                                    = self
         dataSource                                  = self
@@ -66,7 +65,6 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     }
 
     //MARK: - UUICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cells.count
     }
@@ -74,13 +72,12 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: STCollectionViewCell.id, for: indexPath) as! STCollectionViewCell
         
+        
         cell.button = cells[indexPath.row]
         cell.configureButton()
-//        cell.isUserInteractionEnabled = true
         return cell
     }
     
-    //MARK: - height and width cell in collecitonView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return calculateSizeOfCell(indexPath: indexPath)
@@ -91,12 +88,12 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         cells[indexPath.row].didPressed()
     }
     
+    
+    //MARK: - Private
     private func calculateSizeOfCell(indexPath: IndexPath) -> CGSize {
         let size = cells[indexPath.row].frame.size
         let width = size.width + 40
         return CGSize(width: width, height: 44)
     }
-    
-    
 }
 
