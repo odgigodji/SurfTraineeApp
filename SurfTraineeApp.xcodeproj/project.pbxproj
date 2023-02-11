@@ -16,7 +16,7 @@
 		FA49F92829957097004C0CBF /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F92729957097004C0CBF /* Dynamic.swift */; };
 		FA49F92E29964AF2004C0CBF /* STTraineeBottomStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F92D29964AF2004C0CBF /* STTraineeBottomStack.swift */; };
 		FA49F930299654FB004C0CBF /* STTwoRowVerticalCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F92F299654FB004C0CBF /* STTwoRowVerticalCollectionView.swift */; };
-		FA49F93329965DBA004C0CBF /* STConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F93229965DBA004C0CBF /* STConstants.swift */; };
+		FA49F93329965DBA004C0CBF /* STFrameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F93229965DBA004C0CBF /* STFrameConstants.swift */; };
 		FA49F9352996A406004C0CBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA49F9342996A406004C0CBF /* LaunchScreen.storyboard */; };
 		FA49F9372996E104004C0CBF /* STText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F9362996E104004C0CBF /* STText.swift */; };
 		FA49F93B2997F42B004C0CBF /* STInfinityCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F93A2997F42B004C0CBF /* STInfinityCollectionViewModel.swift */; };
@@ -45,7 +45,7 @@
 		FA49F92729957097004C0CBF /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		FA49F92D29964AF2004C0CBF /* STTraineeBottomStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STTraineeBottomStack.swift; sourceTree = "<group>"; };
 		FA49F92F299654FB004C0CBF /* STTwoRowVerticalCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STTwoRowVerticalCollectionView.swift; sourceTree = "<group>"; };
-		FA49F93229965DBA004C0CBF /* STConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STConstants.swift; sourceTree = "<group>"; };
+		FA49F93229965DBA004C0CBF /* STFrameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STFrameConstants.swift; sourceTree = "<group>"; };
 		FA49F9342996A406004C0CBF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA49F9362996E104004C0CBF /* STText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STText.swift; sourceTree = "<group>"; };
 		FA49F93A2997F42B004C0CBF /* STInfinityCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STInfinityCollectionViewModel.swift; sourceTree = "<group>"; };
@@ -58,7 +58,6 @@
 		FA5D5E502912D5B100066241 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA5D5E552912D5B100066241 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAC814772912DC6F006B3130 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		FAE416862993C62E000484E3 /* goals.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = goals.md; sourceTree = "<group>"; };
 		FAE416872993D3A4000484E3 /* STTraineeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STTraineeView.swift; sourceTree = "<group>"; };
 		FAE4168B29941085000484E3 /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
 		FAE4168D2994142A000484E3 /* STLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLabel.swift; sourceTree = "<group>"; };
@@ -133,14 +132,6 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		FA49F93F2998029B004C0CBF /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				FA49F940299802AE004C0CBF /* STLeftAlignedCollectionViewFlowLayout.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
 		FA5D5E3B2912D5AF00066241 = {
 			isa = PBXGroup;
 			children = (
@@ -160,7 +151,6 @@
 		FA5D5E462912D5AF00066241 /* SurfTraineeApp */ = {
 			isa = PBXGroup;
 			children = (
-				FA49F93F2998029B004C0CBF /* Utilities */,
 				FAE4169229941805000484E3 /* Constants */,
 				FAE4168A29941042000484E3 /* Extension */,
 				FA5D5E5B2912D5CE00066241 /* Support */,
@@ -178,7 +168,6 @@
 				FA5D5E502912D5B100066241 /* Assets.xcassets */,
 				FA5D5E472912D5AF00066241 /* AppDelegate.swift */,
 				FA5D5E492912D5AF00066241 /* SceneDelegate.swift */,
-				FAE416862993C62E000484E3 /* goals.md */,
 				FA49F9342996A406004C0CBF /* LaunchScreen.storyboard */,
 			);
 			path = Support;
@@ -207,6 +196,7 @@
 				FAE4169C2994F3B8000484E3 /* UICollectionView */,
 				FAE4168D2994142A000484E3 /* STLabel.swift */,
 				FA49F91829950958004C0CBF /* STButton.swift */,
+				FA49F940299802AE004C0CBF /* STLeftAlignedCollectionViewFlowLayout.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -225,7 +215,7 @@
 				FAE4169329941814000484E3 /* STFonts.swift */,
 				FA49F91A29951434004C0CBF /* STButtonType.swift */,
 				FA49F91E29951F9E004C0CBF /* STColors.swift */,
-				FA49F93229965DBA004C0CBF /* STConstants.swift */,
+				FA49F93229965DBA004C0CBF /* STFrameConstants.swift */,
 				FA49F9362996E104004C0CBF /* STText.swift */,
 			);
 			path = Constants;
@@ -333,7 +323,7 @@
 				FA49F91929950958004C0CBF /* STButton.swift in Sources */,
 				FAE4169B2994F0FA000484E3 /* STInfinityHorizontalCollectionView.swift in Sources */,
 				FA49F9372996E104004C0CBF /* STText.swift in Sources */,
-				FA49F93329965DBA004C0CBF /* STConstants.swift in Sources */,
+				FA49F93329965DBA004C0CBF /* STFrameConstants.swift in Sources */,
 				FAE4168E2994142A000484E3 /* STLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

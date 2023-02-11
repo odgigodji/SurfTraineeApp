@@ -34,7 +34,7 @@ final class STTraineeTopStackView: UIStackView {
         spacing         = 12
        
         NSLayoutConstraint.activate([
-            collectionView.heightAnchor.constraint(equalToConstant: 44),
+            collectionView.heightAnchor.constraint(equalToConstant: STFrameConstants.heightOfCollectionViewCell),
         ])
         
         addArrangedSubview(topLabel)

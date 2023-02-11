@@ -8,7 +8,6 @@
 import UIKit
 
 
-
 class STTwoRowVerticalCollectionView: UICollectionView, UICollectionViewDelegate,
 UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -58,8 +57,8 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     //MARK: - Private
     private func calculateSizeOfCell(indexPath: IndexPath) -> CGSize {
         let size = cells[indexPath.row].frame.size
-        let width = size.width + 40
-        return CGSize(width: width, height: 44)
+        let width = size.width + STFrameConstants.widthPadding
+        return CGSize(width: width, height: STFrameConstants.heightOfCollectionViewCell)
     }
     
     private func configureCollectionView() {

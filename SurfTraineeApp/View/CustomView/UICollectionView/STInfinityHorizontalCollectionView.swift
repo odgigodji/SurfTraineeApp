@@ -54,8 +54,8 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let size    = cells[indexPath.row % cells.count].frame.size
-        let width   = size.width + 44
-        return CGSize(width: width, height: 44)
+        let width   = size.width + STFrameConstants.widthPadding
+        return CGSize(width: width, height: STFrameConstants.heightOfCollectionViewCell)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
