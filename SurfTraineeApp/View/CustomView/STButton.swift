@@ -11,16 +11,12 @@ import UIKit
 /// custom Button uses in application
 class STButton: UIButton {
     
-//    var viewModel = STButtonViewModel()
-
     private var isPressed = false
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        translatesAutoresizingMaskIntoConstraints   = false
-        
-//        sizeToFit()
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder: NSCoder) {
@@ -48,7 +44,6 @@ class STButton: UIButton {
 
     
     //MARK: - Private
-    
     private func didPressStateChanged() {
         if isPressed {
             backgroundColor = STColors.coal
@@ -63,8 +58,8 @@ class STButton: UIButton {
     private func configureBigButton() {
         titleLabel?.font = STFonts.medium16
         setTitleColor(.white, for: .normal)
-        layer.cornerRadius = 30
-        backgroundColor = STColors.coal
+        layer.cornerRadius          = 30
+        backgroundColor             = STColors.coal
         
         NSLayoutConstraint.activate([
             heightAnchor.constraint(equalToConstant: 60),
@@ -75,9 +70,9 @@ class STButton: UIButton {
     private func configureRegularButton() {
         titleLabel?.font = STFonts.medium14
         setTitleColor(.black, for: .normal)
-        layer.cornerRadius = 12
-        backgroundColor = STColors.lightGray
-        isUserInteractionEnabled                    = false
+        layer.cornerRadius          = 12
+        backgroundColor             = STColors.lightGray
+        isUserInteractionEnabled    = false
         
         sizeToFit()
     }

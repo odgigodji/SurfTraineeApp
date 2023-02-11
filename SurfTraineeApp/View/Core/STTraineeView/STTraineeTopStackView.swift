@@ -13,7 +13,6 @@ final class STTraineeTopStackView: UIStackView {
     var middleLabel = STLabel(text: STText.secondary1, font: STFonts.regular14, textColor: .gray)
     
     private var collectionView = STInfinityHorizontalCollectionView()
-//    private var collectionView = STCollectionView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

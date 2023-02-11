@@ -29,14 +29,14 @@ final class STTraineeBottomStack: UIStackView {
         axis            = .vertical
         distribution    = .fillProportionally
         spacing         = 12
-
-//        backgroundColor = .green
         
         addArrangedSubview(label)
         addArrangedSubview(twoRowCollectionView)
         
+        let heightConstant = STFrameConstants.heightOfCollectionViewCell * 2 + 13
+        
         NSLayoutConstraint.activate([
-            twoRowCollectionView.heightAnchor.constraint(equalToConstant: 101)
+            twoRowCollectionView.heightAnchor.constraint(equalToConstant: heightConstant)
         ])
     }
 }

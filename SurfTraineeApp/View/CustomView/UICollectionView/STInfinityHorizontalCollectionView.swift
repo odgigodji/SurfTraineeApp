@@ -63,8 +63,6 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         let actualRow = indexPath.row % cells.count
         
         didPressedAllEqualButtons(to: actualRow)
-        
-//        cells[actualRow].didPressed()
         moveElemToLeftBorder(indexPath: IndexPath(item: indexPath.row, section: 0), animated: true)
     }
     
@@ -81,7 +79,6 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     }
     
     private func configureCollectionView() {
-        
         cells                                       = viewModel.createButtonsWithTraineeDirections()
         
         translatesAutoresizingMaskIntoConstraints   = false
