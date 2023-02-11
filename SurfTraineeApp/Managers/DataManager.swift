@@ -17,7 +17,9 @@ class DataManagerImpl: DataManager {
     
     func getTraineeDirections() -> [String] {
         
-        let traineeDirections = ["IOS", "Android", "Design"]
+//        let traineeDirections = ["IOS"]
+        
+        let traineeDirections = ["IOS", "Android", "Design", "QA", "Flutter", "PM", "Devops", "Backend", "Machine Learning", "Game Dev"]
         
         return traineeDirections
     }

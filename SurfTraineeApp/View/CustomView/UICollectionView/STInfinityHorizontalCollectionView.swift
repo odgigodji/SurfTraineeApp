@@ -8,7 +8,7 @@
 import UIKit
 
 
-final class STInfinityCollectionView: UICollectionView, UICollectionViewDelegate,
+final class STInfinityHorizontalCollectionView: UICollectionView, UICollectionViewDelegate,
 UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     private var cells = [STButton]()
@@ -36,6 +36,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     
     //MARK: - UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return numberOfCells
     }
@@ -50,7 +51,6 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         return cell
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let size    = cells[indexPath.row % cells.count].frame.size
@@ -58,13 +58,13 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: 44)
     }
     
-    var middleElem : Int = 0
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let actualRow = indexPath.row % cells.count
         
         didPressedAllEqualButtons(to: actualRow)
+        
+//        cells[actualRow].didPressed()
         moveElemToLeftBorder(indexPath: IndexPath(item: indexPath.row, section: 0), animated: true)
     }
     
@@ -96,9 +96,9 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     private func didPressedAllEqualButtons(to row: Int) {
         for cell in cells {
             if cell.titleLabel?.text == cells[row].titleLabel?.text {
-                cells[row].didPressed()
                 cell.didPressed()
             }
+            cells[row].didPressed()
         }
     }
 }

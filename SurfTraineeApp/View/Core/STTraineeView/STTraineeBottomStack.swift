@@ -10,7 +10,7 @@ import UIKit
 final class STTraineeBottomStack: UIStackView {
     
     var label = STLabel(text: STText.secondary2, font: STFonts.regular14, textColor: .gray)
-    private var twoRowCollectionView = STTwoRowCollectionView()
+    private var twoRowCollectionView = STTwoRowVerticalCollectionView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

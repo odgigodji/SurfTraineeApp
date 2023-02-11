@@ -20,7 +20,7 @@ class STButton: UIButton {
         
         translatesAutoresizingMaskIntoConstraints   = false
         
-        sizeToFit()
+//        sizeToFit()
     }
     
     required init?(coder: NSCoder) {

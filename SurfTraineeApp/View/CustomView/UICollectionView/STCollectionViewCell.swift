@@ -15,16 +15,8 @@ class STCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         backgroundColor = .white
-//        layer.cornerRadius = 32
-//        backgroundColor = .white
-//        self.translatesAutoresizingMaskIntoConstraints = false
-        
-//        print("BUTTON \(button.titleLabel?.text)")
-//        configureButton()
     }
-
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

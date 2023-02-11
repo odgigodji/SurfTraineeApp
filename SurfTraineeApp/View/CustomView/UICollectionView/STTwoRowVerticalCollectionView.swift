@@ -8,30 +8,8 @@
 import UIKit
 
 
-class LeftAlignedCollectionViewFlowLayout: UICollectionViewFlowLayout {
 
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        let attributes = super.layoutAttributesForElements(in: rect)
-
-        var leftMargin = sectionInset.left
-        var maxY: CGFloat = -1.0
-        attributes?.forEach { layoutAttribute in
-            if layoutAttribute.frame.origin.y >= maxY {
-                leftMargin = sectionInset.left
-            }
-
-            layoutAttribute.frame.origin.x = leftMargin
-
-            leftMargin += layoutAttribute.frame.width + minimumInteritemSpacing
-            maxY = max(layoutAttribute.frame.maxY , maxY)
-        }
-
-        return attributes
-    }
-}
-
-
-class STTwoRowCollectionView: UICollectionView, UICollectionViewDelegate,
+class STTwoRowVerticalCollectionView: UICollectionView, UICollectionViewDelegate,
 UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     //MARK: - test buttons
@@ -40,24 +18,12 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var viewModel: STCollectionViewModelProtocol = STCollectionViewModel()
     
     init() {
-        
-        let layout = LeftAlignedCollectionViewFlowLayout()
+        let layout = STLeftAlignedCollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 12
         layout.minimumLineSpacing = 12
 
         super.init(frame: .zero, collectionViewLayout: layout)
-        
-        cells = viewModel.createButtonsWithTraineeDirections()
-        
-        translatesAutoresizingMaskIntoConstraints   = false
-        showsHorizontalScrollIndicator              = false
-        backgroundColor                             = .white
-        
-        delegate                                    = self
-        dataSource                                  = self
-        register(STCollectionViewCell.self, forCellWithReuseIdentifier: STCollectionViewCell.id)
-        
-
+        configureCollectionView()
     }
     
     required init(coder: NSCoder) {
@@ -94,6 +60,18 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         let size = cells[indexPath.row].frame.size
         let width = size.width + 40
         return CGSize(width: width, height: 44)
+    }
+    
+    private func configureCollectionView() {
+        cells = viewModel.createButtonsWithTraineeDirections()
+        
+        translatesAutoresizingMaskIntoConstraints   = false
+        showsHorizontalScrollIndicator              = false
+        backgroundColor                             = .white
+        
+        delegate                                    = self
+        dataSource                                  = self
+        register(STCollectionViewCell.self, forCellWithReuseIdentifier: STCollectionViewCell.id)
     }
 }
 
