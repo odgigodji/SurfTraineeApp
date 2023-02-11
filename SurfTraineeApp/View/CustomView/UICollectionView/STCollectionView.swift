@@ -43,14 +43,23 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cells.count
+//        return cells.count
+        return 100
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: STCollectionViewCell.id, for: indexPath) as! STCollectionViewCell
         
-        cell.button = cells[indexPath.row]
+//        cell.button = cells[indexPath.row]
+//        cell.configureButton()
+        
+        cell.button = cells[indexPath.row % cells.count]
         cell.configureButton()
+        
+        if indexPath.row == 0 {
+            moveElemToLeftBorder(indexPath: IndexPath(row: 50, section: 0), animated: false)
+        }
+        
         return cell
     }
     
@@ -58,7 +67,8 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //MARK: - height and width cell in collecitonView
         
-        let size = cells[indexPath.row].frame.size
+//        let size = cells[indexPath.row].frame.size
+        let size = cells[indexPath.row % cells.count].frame.size
         let width = size.width + 44
         return CGSize(width: width, height: 44)
     }
@@ -67,8 +77,12 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        print("DIDSELECTITEMAT: \(cells[indexPath.row].titleLabel?.text!)")
         
-        moveElemToLeftBorder(indexPath: indexPath)
-        cells[indexPath.row].didPressed()
+//        moveElemToLeftBorder(indexPath: indexPath)
+//        cells[indexPath.row].didPressed()
+        
+        let actualRow = indexPath.row % cells.count
+        cells[actualRow].didPressed()
+        moveElemToLeftBorder(indexPath: IndexPath(item: actualRow + 50, section: 0), animated: true)
     }
     
     func scrollViewDidEndDragging(_ collectionView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -89,7 +103,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 //        }
     }
     
-    private func moveElemToLeftBorder(indexPath: IndexPath) {
-        scrollToItem(at: indexPath, at: .left, animated: true)
+    private func moveElemToLeftBorder(indexPath: IndexPath, animated: Bool) {
+        scrollToItem(at: indexPath, at: .left, animated: animated)
     }
 }
