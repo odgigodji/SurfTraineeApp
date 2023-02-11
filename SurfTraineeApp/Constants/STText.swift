@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Constants with text used in project
 enum STText {
     static let mainTitle = "Стажировка в Surf"
     

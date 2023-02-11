@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Constants for sizes of cells 
 enum STFrameConstants {
     static let heightOfCollectionViewCell: CGFloat   = 44
     static let widthPadding: CGFloat                 = 44

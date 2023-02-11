@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// Big - black button on bottom
+/// Regular - all buttons in collectionView cells
 enum STButtonType {
     case big
     case regular
