@@ -41,24 +41,20 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         fatalError("init(coder:) has not been implemented")
     }
 
+    let numberOfCells = 100000
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        return cells.count
-        return 100000
+//        return 100000
+        return numberOfCells
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: STCollectionViewCell.id, for: indexPath) as! STCollectionViewCell
         
-//        cell.button = cells[indexPath.row]
-//        cell.configureButton()
-        
         cell.button = cells[indexPath.row % cells.count]
         cell.configureButton()
-        
-        if indexPath.row == 0 {
-            moveElemToLeftBorder(indexPath: IndexPath(row: 50000, section: 0), animated: false)
-        }
+        returnElemFromEdgeToMiddle(indexPath: indexPath)
         
         return cell
     }
@@ -81,38 +77,19 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 //        moveElemToLeftBorder(indexPath: indexPath)
 //        cells[indexPath.row].didPressed()
         
-        var actualRow = indexPath.row % cells.count
-        
-        if indexPath.row > cells.count {
-            print("indePath.row = \(indexPath.row)")
-//            actualRow = actualRow % cells.count
-            print(actualRow)
-        }
-        
-        print(actualRow)
+        let actualRow = indexPath.row % cells.count
+//        print(actualRow)
         cells[actualRow].didPressed()
         moveElemToLeftBorder(indexPath: IndexPath(item: indexPath.row, section: 0), animated: true)
     }
     
-    func scrollViewDidEndDragging(_ collectionView: UIScrollView, willDecelerate decelerate: Bool) {
-        let offsetX         = collectionView.contentOffset.x
-        let contentWidth   = collectionView.contentSize.width
-        let widthOfDisplay  = self.frame.size.width
-
-//        print("offsetX = \(offsetX)")
-//        print("contentWidth = \(contentWidth)")
-//        print("widthOfDispay = \(widthOfDisplay)")
-//        let heightOfDisplay = collecionView.frame.size.t
-        
-        
-//        if offsetX >= contentWidth - widthOfDisplay {
-//            print("HHER")
-//            cells += cells
-//            reloadData()
-//        }
-    }
-    
     private func moveElemToLeftBorder(indexPath: IndexPath, animated: Bool) {
         scrollToItem(at: indexPath, at: .left, animated: animated)
+    }
+    
+    private func returnElemFromEdgeToMiddle(indexPath: IndexPath) {
+        if indexPath.row == 0 || indexPath.row == numberOfCells - 1 {
+            moveElemToLeftBorder(indexPath: IndexPath(row: numberOfCells / 2,  section: 0), animated: false)
+        }
     }
 }
