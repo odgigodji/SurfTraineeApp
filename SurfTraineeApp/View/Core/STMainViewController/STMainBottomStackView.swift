@@ -7,11 +7,12 @@
 
 import UIKit
 
+
 final class STMainBottomStackView: UIStackView {
     
     weak var delegate: STMainViewController?
     
-    private var button = STButton(type: .big, title: "Отправить заявку")
+    private var sendAnApplicationButton = STButton(type: .big, title: "Отправить заявку")
     private var label = STLabel(text: "Xочешь к нам?", font: STFonts.regular14, textColor: .gray)
     
     override init(frame: CGRect) {
@@ -19,8 +20,7 @@ final class STMainBottomStackView: UIStackView {
         translatesAutoresizingMaskIntoConstraints = false
         
         configureStackView()
-        
-        button.addTarget(self, action: #selector(tap), for: .touchUpInside)
+        sendAnApplicationButton.addTarget(self, action: #selector(sendAnApplicationButtonTapped), for: .touchUpInside)
     }
     
     required init(coder: NSCoder) {
@@ -32,15 +32,12 @@ final class STMainBottomStackView: UIStackView {
     private func configureStackView() {
         axis            = .horizontal
         distribution    = .fillProportionally
-//        alignment       = .f
-        
-//        backgroundColor = .green
        
         addArrangedSubview(label)
-        addArrangedSubview(button)
+        addArrangedSubview(sendAnApplicationButton)
     }
     
-    @objc private func tap() {
-        print("show alert")
+    @objc private func sendAnApplicationButtonTapped() {
+        delegate?.showSuccessAlert()
     }
 }

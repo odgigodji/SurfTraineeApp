@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ShowAlertProtocol {
+    func showSuccessAlert()
+}
+
 final class STMainViewController: UIViewController {
     
     private var imageView   = UIImageView(image: UIImage(named: "background"))
@@ -57,8 +61,6 @@ final class STMainViewController: UIViewController {
         contentView.backgroundColor                             = .white
         contentView.layer.cornerRadius                          = 32
         
-//        let safeAreaInsets = UIApplication.shared.windows.first?.safeAreaInsets.top
-        
         NSLayoutConstraint.activate([
             //FIXME: - constant
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 450),
@@ -77,12 +79,12 @@ final class STMainViewController: UIViewController {
             bottomStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -58),
             bottomStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             bottomStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
-//            bottomView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            
-//            bottomView.widthAnchor.constraint(equalToConstant: 219),
-//            bottomView.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
 }
 
-
+extension STMainViewController: ShowAlertProtocol {
+    func showSuccessAlert() {
+        self.presentAlertOnMainThread(title: "Поздравляем!", message: "Ваша заявка успешно отправлена!", buttonTitle: "Закрыть")
+    }
+}
