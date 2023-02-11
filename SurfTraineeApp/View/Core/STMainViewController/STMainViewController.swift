@@ -25,14 +25,25 @@ final class STMainViewController: UIViewController {
         
         configureImageView()
         configureScrollView()
-        configureMainView()
+        configureContentView()
         
         configureBottomStackView()
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        prepareAnimation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        startAnimattion()
+    }
+    
     //MARK: - Private
     
-    /// Layout UI
+    //MARK: - Configure Layout
     private func configureImageView() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -56,13 +67,15 @@ final class STMainViewController: UIViewController {
         ])
     }
     
-    private func configureMainView() {
+    private func configureContentView() {
         scrollView.addSubview(contentView)
         contentView.backgroundColor                             = .white
         contentView.layer.cornerRadius                          = 32
         
         NSLayoutConstraint.activate([
+            
             //FIXME: - constant
+            
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 450),
             
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
@@ -81,6 +94,23 @@ final class STMainViewController: UIViewController {
             bottomStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
     }
+    
+    
+    //MARK: - Animations
+    private func prepareAnimation() {
+        self.contentView.alpha = 0.0
+        self.bottomStackView.alpha = 0.0
+    }
+    
+    private func startAnimattion() {
+        UIView.animate(withDuration: 1) {
+            self.contentView.alpha = 1.0
+        }
+        UIView.animate(withDuration: 2) {
+            self.bottomStackView.alpha = 1.0
+        }
+    }
+    
 }
 
 extension STMainViewController: ShowAlertProtocol {
