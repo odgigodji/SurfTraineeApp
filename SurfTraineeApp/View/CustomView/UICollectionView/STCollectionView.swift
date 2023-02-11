@@ -44,7 +44,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        return cells.count
-        return 100
+        return 100000
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -57,7 +57,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         cell.configureButton()
         
         if indexPath.row == 0 {
-            moveElemToLeftBorder(indexPath: IndexPath(row: 50, section: 0), animated: false)
+            moveElemToLeftBorder(indexPath: IndexPath(row: 50000, section: 0), animated: false)
         }
         
         return cell
@@ -73,6 +73,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: 44)
     }
     
+    var middleElem : Int = 0
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        print("DIDSELECTITEMAT: \(cells[indexPath.row].titleLabel?.text!)")
@@ -80,9 +81,17 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 //        moveElemToLeftBorder(indexPath: indexPath)
 //        cells[indexPath.row].didPressed()
         
-        let actualRow = indexPath.row % cells.count
+        var actualRow = indexPath.row % cells.count
+        
+        if indexPath.row > cells.count {
+            print("indePath.row = \(indexPath.row)")
+//            actualRow = actualRow % cells.count
+            print(actualRow)
+        }
+        
+        print(actualRow)
         cells[actualRow].didPressed()
-        moveElemToLeftBorder(indexPath: IndexPath(item: actualRow + 50, section: 0), animated: true)
+        moveElemToLeftBorder(indexPath: IndexPath(item: indexPath.row, section: 0), animated: true)
     }
     
     func scrollViewDidEndDragging(_ collectionView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -90,9 +99,9 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         let contentWidth   = collectionView.contentSize.width
         let widthOfDisplay  = self.frame.size.width
 
-        print("offsetX = \(offsetX)")
-        print("contentWidth = \(contentWidth)")
-        print("widthOfDispay = \(widthOfDisplay)")
+//        print("offsetX = \(offsetX)")
+//        print("contentWidth = \(contentWidth)")
+//        print("widthOfDispay = \(widthOfDisplay)")
 //        let heightOfDisplay = collecionView.frame.size.t
         
         
