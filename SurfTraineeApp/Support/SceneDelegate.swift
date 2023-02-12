@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  mSurfTraineeAppvp
+//  SurfTraineeApp
 //
 //  Created by Nikita Evdokimov on 07.02.23.
 //
