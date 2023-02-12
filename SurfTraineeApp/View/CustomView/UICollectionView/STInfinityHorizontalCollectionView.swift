@@ -42,8 +42,8 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell    = dequeueReusableCell(withReuseIdentifier: STCollectionViewCell.id, for: indexPath) as! STCollectionViewCell
         
-        cell.button = cells[indexPath.row % cells.count]
-        cell.configureButton()
+        let button = cells[indexPath.row % cells.count]
+        cell.configure(button: button)
         returnElemFromEdgeToMiddle(indexPath: indexPath)
         
         return cell

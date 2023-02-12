@@ -52,5 +52,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "21A41823-4CDE-42B1-9008-31C8CF020D50"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SurfTraineeApp/Constants/STText.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "STText"
+            landmarkType = "13">
+            <Locations>
+               <Location
+                  uuid = "21A41823-4CDE-42B1-9008-31C8CF020D50 - df666c9f22e03fcd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "one-time initialization function for mainTitle"
+                  moduleName = "SurfTraineeApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/work/swift/MyProjects/SurfTraineeApp/SurfTraineeApp/Constants/STText.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "21A41823-4CDE-42B1-9008-31C8CF020D50 - 40248f71b5a936f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SurfTraineeApp.STText.mainTitle.unsafeMutableAddressor : Swift.String"
+                  moduleName = "SurfTraineeApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbook/work/swift/MyProjects/SurfTraineeApp/SurfTraineeApp/Constants/STText.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

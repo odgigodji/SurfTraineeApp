@@ -38,8 +38,8 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         let cell = dequeueReusableCell(withReuseIdentifier: STCollectionViewCell.id, for: indexPath) as! STCollectionViewCell
         
         
-        cell.button = cells[indexPath.row]
-        cell.configureButton()
+        let button = cells[indexPath.row]
+        cell.configure(button: button)
         return cell
     }
     

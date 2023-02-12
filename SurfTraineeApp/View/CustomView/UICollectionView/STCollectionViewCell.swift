@@ -21,8 +21,8 @@ class STCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureButton() {
-        guard let button = button else { return }
+    func configure(button: UIButton) {
+//        guard let button = button else { return }
         addSubview(button)
         
         NSLayoutConstraint.activate([
