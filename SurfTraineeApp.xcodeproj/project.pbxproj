@@ -12,14 +12,11 @@
 		FA49F91D2995196C004C0CBF /* STMainBottomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F91C2995196C004C0CBF /* STMainBottomStackView.swift */; };
 		FA49F91F29951F9E004C0CBF /* STColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F91E29951F9E004C0CBF /* STColors.swift */; };
 		FA49F92129954747004C0CBF /* STTraineeTopStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F92029954747004C0CBF /* STTraineeTopStackView.swift */; };
-		FA49F92629956F0D004C0CBF /* STCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F92529956F0D004C0CBF /* STCollectionViewModel.swift */; };
 		FA49F92E29964AF2004C0CBF /* STTraineeBottomStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F92D29964AF2004C0CBF /* STTraineeBottomStack.swift */; };
 		FA49F930299654FB004C0CBF /* STTwoRowVerticalCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F92F299654FB004C0CBF /* STTwoRowVerticalCollectionView.swift */; };
 		FA49F93329965DBA004C0CBF /* STFrameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F93229965DBA004C0CBF /* STFrameConstants.swift */; };
 		FA49F9352996A406004C0CBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA49F9342996A406004C0CBF /* LaunchScreen.storyboard */; };
 		FA49F9372996E104004C0CBF /* STText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F9362996E104004C0CBF /* STText.swift */; };
-		FA49F93B2997F42B004C0CBF /* STInfinityCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F93A2997F42B004C0CBF /* STInfinityCollectionViewModel.swift */; };
-		FA49F93E2997F486004C0CBF /* STCollectionViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F93D2997F486004C0CBF /* STCollectionViewModelProtocol.swift */; };
 		FA49F941299802AE004C0CBF /* STLeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F940299802AE004C0CBF /* STLeftAlignedCollectionViewFlowLayout.swift */; };
 		FA49F943299819F6004C0CBF /* UIViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F942299819F6004C0CBF /* UIViewController + Ext.swift */; };
 		FA49F9462999031F004C0CBF /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F9452999031F004C0CBF /* Assembly.swift */; };
@@ -43,14 +40,11 @@
 		FA49F91C2995196C004C0CBF /* STMainBottomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STMainBottomStackView.swift; sourceTree = "<group>"; };
 		FA49F91E29951F9E004C0CBF /* STColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STColors.swift; sourceTree = "<group>"; };
 		FA49F92029954747004C0CBF /* STTraineeTopStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STTraineeTopStackView.swift; sourceTree = "<group>"; };
-		FA49F92529956F0D004C0CBF /* STCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STCollectionViewModel.swift; sourceTree = "<group>"; };
 		FA49F92D29964AF2004C0CBF /* STTraineeBottomStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STTraineeBottomStack.swift; sourceTree = "<group>"; };
 		FA49F92F299654FB004C0CBF /* STTwoRowVerticalCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STTwoRowVerticalCollectionView.swift; sourceTree = "<group>"; };
 		FA49F93229965DBA004C0CBF /* STFrameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STFrameConstants.swift; sourceTree = "<group>"; };
 		FA49F9342996A406004C0CBF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA49F9362996E104004C0CBF /* STText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STText.swift; sourceTree = "<group>"; };
-		FA49F93A2997F42B004C0CBF /* STInfinityCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STInfinityCollectionViewModel.swift; sourceTree = "<group>"; };
-		FA49F93D2997F486004C0CBF /* STCollectionViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STCollectionViewModelProtocol.swift; sourceTree = "<group>"; };
 		FA49F940299802AE004C0CBF /* STLeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		FA49F942299819F6004C0CBF /* UIViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Ext.swift"; sourceTree = "<group>"; };
 		FA49F9452999031F004C0CBF /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
@@ -109,24 +103,6 @@
 			path = STMainViewController;
 			sourceTree = "<group>";
 		};
-		FA49F92429956EE9004C0CBF /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				FA49F93C2997F467004C0CBF /* Protocols */,
-				FA49F93A2997F42B004C0CBF /* STInfinityCollectionViewModel.swift */,
-				FA49F92529956F0D004C0CBF /* STCollectionViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		FA49F93C2997F467004C0CBF /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				FA49F93D2997F486004C0CBF /* STCollectionViewModelProtocol.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		FA49F9442999024F004C0CBF /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,7 +135,6 @@
 				FA5D5E5B2912D5CE00066241 /* Support */,
 				FA49F9442999024F004C0CBF /* Presenter */,
 				FAC814762912DC63006B3130 /* Managers */,
-				FA49F92429956EE9004C0CBF /* ViewModels */,
 				FAC814722912DC17006B3130 /* View */,
 			);
 			path = SurfTraineeApp;
@@ -314,10 +289,7 @@
 				FA49F91F29951F9E004C0CBF /* STColors.swift in Sources */,
 				FAC814782912DC6F006B3130 /* DataManager.swift in Sources */,
 				FA49F930299654FB004C0CBF /* STTwoRowVerticalCollectionView.swift in Sources */,
-				FA49F93E2997F486004C0CBF /* STCollectionViewModelProtocol.swift in Sources */,
-				FA49F93B2997F42B004C0CBF /* STInfinityCollectionViewModel.swift in Sources */,
 				FAE4169E2994F3DC000484E3 /* STCollectionViewCell.swift in Sources */,
-				FA49F92629956F0D004C0CBF /* STCollectionViewModel.swift in Sources */,
 				FA49F91D2995196C004C0CBF /* STMainBottomStackView.swift in Sources */,
 				FA5D5E482912D5AF00066241 /* AppDelegate.swift in Sources */,
 				FAE4168C29941085000484E3 /* UIView + Ext.swift in Sources */,

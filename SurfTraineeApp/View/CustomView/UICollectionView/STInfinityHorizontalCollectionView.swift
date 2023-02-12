@@ -118,7 +118,7 @@ final class STInfinityHorizontalCollectionView: UICollectionView, UICollectionVi
     
     //MARK: - Set
     func set(traineeDirections: [String]) {
-        cells = createButtons(with: traineeDirections)
+        cells = traineeDirections.isEmpty ? [STButton()] : createButtons(with: traineeDirections)
     }
 }
 
