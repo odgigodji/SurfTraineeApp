@@ -63,7 +63,7 @@ final class STInfinityHorizontalCollectionView: UICollectionView, UICollectionVi
     }
     
     
-    //MARK: - Configuration
+    //MARK: - Configure
     private func configureCollectionView() {
         translatesAutoresizingMaskIntoConstraints   = false
         showsHorizontalScrollIndicator              = false
