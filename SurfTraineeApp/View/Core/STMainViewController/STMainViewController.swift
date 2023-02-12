@@ -25,7 +25,6 @@ final class STMainViewController: UIViewController {
         super.viewDidLoad()
         
         view.addSubviews(imageView, scrollView)
-        
         configureImageView()
         configureScrollView()
         
@@ -61,7 +60,7 @@ final class STMainViewController: UIViewController {
         scrollView.translatesAutoresizingMaskIntoConstraints    = false
         scrollView.bounces                                      = false
         scrollView.showsVerticalScrollIndicator                 = false
-        scrollView.delegate = self
+        scrollView.delegate                                     = self
         
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -90,7 +89,6 @@ final class STMainViewController: UIViewController {
         bottomStackView.delegate = self
         
         let padding = view.frame.width / 18.75
-        
         NSLayoutConstraint.activate([
             bottomStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -58),
             bottomStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
@@ -117,7 +115,7 @@ final class STMainViewController: UIViewController {
         }
     }
     
-    private func hideButtomStack() {
+    private func hideBottomStack() {
         UIView.animate(withDuration: 0.3) {
             self.bottomStackView.alpha  = 0.0
         }
@@ -130,7 +128,7 @@ extension STMainViewController: UIScrollViewDelegate {
         if scrollView.contentOffset.y > 100 {
             showBottomStack()
         } else {
-            hideButtomStack()
+            hideBottomStack()
         }
     }
 }
