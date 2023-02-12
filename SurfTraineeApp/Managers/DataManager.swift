@@ -1,6 +1,6 @@
 //
 //  DataManager.swift
-//  mvSurfTraineeAppp
+//  SurfTraineeAppp
 //
 //  Created by Nikita Evdokimov on 07.02.23.
 //

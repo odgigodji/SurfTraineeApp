@@ -8,6 +8,7 @@
 import UIKit
 
 
+/// custom class for customize layout in TwoRowCollectionView
 final class STLeftAlignedCollectionViewFlowLayout: UICollectionViewFlowLayout {
 
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {

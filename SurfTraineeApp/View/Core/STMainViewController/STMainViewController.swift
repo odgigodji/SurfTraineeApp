@@ -61,6 +61,7 @@ final class STMainViewController: UIViewController {
         scrollView.translatesAutoresizingMaskIntoConstraints    = false
         scrollView.bounces                                      = false
         scrollView.showsVerticalScrollIndicator                 = false
+        scrollView.delegate = self
         
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -79,7 +80,7 @@ final class STMainViewController: UIViewController {
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 450),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentView.heightAnchor.constraint(equalToConstant: view.frame.height)
+            contentView.heightAnchor.constraint(equalToConstant: view.frame.height - 40)
         ])
         contentView.set(traineeDirections: traineeDirections)
     }
@@ -88,10 +89,12 @@ final class STMainViewController: UIViewController {
         view.addSubview(bottomStackView)
         bottomStackView.delegate = self
         
+        let padding = view.frame.width / 18.75
+        
         NSLayoutConstraint.activate([
             bottomStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -58),
-            bottomStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            bottomStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            bottomStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            bottomStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding)
         ])
     }
     
@@ -104,11 +107,30 @@ final class STMainViewController: UIViewController {
     
     private func startAnimattion() {
         UIView.animate(withDuration: 1) {
-            self.contentView.alpha      = 1.0
+            self.contentView.alpha  = 1.0
         }
-        
-        UIView.animate(withDuration: 2) {
+    }
+    
+    private func showBottomStack() {
+        UIView.animate(withDuration: 0.4) {
             self.bottomStackView.alpha  = 1.0
+        }
+    }
+    
+    private func hideButtomStack() {
+        UIView.animate(withDuration: 0.3) {
+            self.bottomStackView.alpha  = 0.0
+        }
+    }
+}
+
+extension STMainViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > 100 {
+            showBottomStack()
+        } else {
+            hideButtomStack()
         }
     }
 }
