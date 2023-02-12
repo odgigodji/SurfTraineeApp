@@ -22,7 +22,7 @@ final class STLabel: UILabel {
         self.text       = text
         self.font       = font
         self.textColor  = textColor
-        numberOfLines = 0
+        numberOfLines   = 0
     }
     
     required init?(coder: NSCoder) {

@@ -33,7 +33,8 @@ final class STTraineeBottomStack: UIStackView {
         addArrangedSubview(label)
         addArrangedSubview(twoRowCollectionView)
         
-        let heightConstant = STFrameConstants.heightOfCollectionViewCell * 2 + 13
+        let padding: CGFloat = 13
+        let heightConstant = (STFrameConstants.heightOfCollectionViewCell * 2) + padding
         NSLayoutConstraint.activate([
             twoRowCollectionView.heightAnchor.constraint(equalToConstant: heightConstant)
         ])

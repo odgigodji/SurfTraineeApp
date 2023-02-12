@@ -104,10 +104,11 @@ final class STMainViewController: UIViewController {
     
     private func startAnimattion() {
         UIView.animate(withDuration: 1) {
-            self.contentView.alpha = 1.0
+            self.contentView.alpha      = 1.0
         }
+        
         UIView.animate(withDuration: 2) {
-            self.bottomStackView.alpha = 1.0
+            self.bottomStackView.alpha  = 1.0
         }
     }
 }

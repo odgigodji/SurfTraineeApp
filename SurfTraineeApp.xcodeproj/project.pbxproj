@@ -143,12 +143,12 @@
 		FA5D5E5B2912D5CE00066241 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				FA5D5E552912D5B100066241 /* Info.plist */,
-				FA5D5E502912D5B100066241 /* Assets.xcassets */,
 				FA5D5E472912D5AF00066241 /* AppDelegate.swift */,
 				FA5D5E492912D5AF00066241 /* SceneDelegate.swift */,
-				FA49F9342996A406004C0CBF /* LaunchScreen.storyboard */,
 				FA49F9452999031F004C0CBF /* Assembly.swift */,
+				FA5D5E552912D5B100066241 /* Info.plist */,
+				FA5D5E502912D5B100066241 /* Assets.xcassets */,
+				FA49F9342996A406004C0CBF /* LaunchScreen.storyboard */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -206,8 +206,8 @@
 			isa = PBXGroup;
 			children = (
 				FAE4169A2994F0FA000484E3 /* STInfinityHorizontalCollectionView.swift */,
-				FAE4169D2994F3DC000484E3 /* STCollectionViewCell.swift */,
 				FA49F92F299654FB004C0CBF /* STTwoRowVerticalCollectionView.swift */,
+				FAE4169D2994F3DC000484E3 /* STCollectionViewCell.swift */,
 			);
 			path = UICollectionView;
 			sourceTree = "<group>";
