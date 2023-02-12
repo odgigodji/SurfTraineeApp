@@ -1,6 +1,6 @@
 # SurfTraineeApp
 
-[](https://i.ibb.co/fxhVR9H/Frame-16.png)
+![](https://i.ibb.co/fxhVR9H/Frame-16.png)
 
 ### Базовая версия:
 <!-- ✅  -->
