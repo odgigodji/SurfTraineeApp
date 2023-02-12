@@ -39,4 +39,9 @@ final class STTraineeTopStackView: UIStackView {
         addArrangedSubview(middleLabel)
         addArrangedSubview(collectionView)
     }
+    
+    //MARK: - Setup
+    func set(traineeDirections: [String]) {
+        collectionView.set(traineeDirections: traineeDirections)
+    }
 }

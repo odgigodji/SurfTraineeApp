@@ -7,18 +7,16 @@
 
 import UIKit
 
-
-final class STInfinityHorizontalCollectionView: UICollectionView, UICollectionViewDelegate,
-UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+//протокол перезентера под коллекшн вью
+final class STInfinityHorizontalCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     private var cells = [STButton]()
     private let numberOfCells = 100000
+    private let minCountOfCollectionViewCells = 16
     
     var middlePosition: Int {
         numberOfCells / 2
     }
-    
-    var viewModel = STInfinityCollectionViewModel()
     
     init() {
         let layout                      = UICollectionViewFlowLayout()
@@ -66,7 +64,10 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     //MARK: - Configuration
     private func configureCollectionView() {
-        cells                                       = viewModel.createButtonsWithTraineeDirections()
+//        cells                                       = viewModel.createButtonsWithTraineeDirections()
+//        cells = output.createButtonsWithTraineeDirections()
+//        updateInfinityCollectionView()
+        
         
         translatesAutoresizingMaskIntoConstraints   = false
         showsHorizontalScrollIndicator              = false
@@ -96,4 +97,29 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
             cells[row].didPress()
         }
     }
+    
+    private func createButtons(with traineeDirections: [String]) -> [STButton] {
+        var traineeDirections = traineeDirections
+        if traineeDirections.count < minCountOfCollectionViewCells {
+            traineeDirections = modifyArrayOfStringToPossibleCount(traineeDirections)
+        }
+        let buttons = traineeDirections.map { STButton(title: $0) }
+        return buttons
+    }
+    
+    private func modifyArrayOfStringToPossibleCount(_ arrayOfString: [String]) -> [String] {
+        var modifiedArray = arrayOfString
+        for _ in 0...minCountOfCollectionViewCells {
+            if modifiedArray.count >= minCountOfCollectionViewCells { break }
+            modifiedArray += modifiedArray
+        }
+        return modifiedArray
+    }
+    
+    //MARK: - Set
+    func set(traineeDirections: [String]) {
+        cells = createButtons(with: traineeDirections)
+    }
 }
+
+

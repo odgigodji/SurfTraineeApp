@@ -22,6 +22,8 @@
 		FA49F93E2997F486004C0CBF /* STCollectionViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F93D2997F486004C0CBF /* STCollectionViewModelProtocol.swift */; };
 		FA49F941299802AE004C0CBF /* STLeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F940299802AE004C0CBF /* STLeftAlignedCollectionViewFlowLayout.swift */; };
 		FA49F943299819F6004C0CBF /* UIViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F942299819F6004C0CBF /* UIViewController + Ext.swift */; };
+		FA49F9462999031F004C0CBF /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F9452999031F004C0CBF /* Assembly.swift */; };
+		FA49F94829990360004C0CBF /* STMainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49F94729990360004C0CBF /* STMainPresenter.swift */; };
 		FA5D5E482912D5AF00066241 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D5E472912D5AF00066241 /* AppDelegate.swift */; };
 		FA5D5E4A2912D5AF00066241 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D5E492912D5AF00066241 /* SceneDelegate.swift */; };
 		FA5D5E4C2912D5AF00066241 /* STMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D5E4B2912D5AF00066241 /* STMainViewController.swift */; };
@@ -51,6 +53,8 @@
 		FA49F93D2997F486004C0CBF /* STCollectionViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STCollectionViewModelProtocol.swift; sourceTree = "<group>"; };
 		FA49F940299802AE004C0CBF /* STLeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STLeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		FA49F942299819F6004C0CBF /* UIViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Ext.swift"; sourceTree = "<group>"; };
+		FA49F9452999031F004C0CBF /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		FA49F94729990360004C0CBF /* STMainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STMainPresenter.swift; sourceTree = "<group>"; };
 		FA5D5E442912D5AF00066241 /* SurfTraineeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurfTraineeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5D5E472912D5AF00066241 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA5D5E492912D5AF00066241 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +127,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		FA49F9442999024F004C0CBF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FA49F94729990360004C0CBF /* STMainPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		FA5D5E3B2912D5AF00066241 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +157,7 @@
 				FAE4169229941805000484E3 /* Constants */,
 				FAE4168A29941042000484E3 /* Extension */,
 				FA5D5E5B2912D5CE00066241 /* Support */,
+				FA49F9442999024F004C0CBF /* Presenter */,
 				FAC814762912DC63006B3130 /* Managers */,
 				FA49F92429956EE9004C0CBF /* ViewModels */,
 				FAC814722912DC17006B3130 /* View */,
@@ -160,6 +173,7 @@
 				FA5D5E472912D5AF00066241 /* AppDelegate.swift */,
 				FA5D5E492912D5AF00066241 /* SceneDelegate.swift */,
 				FA49F9342996A406004C0CBF /* LaunchScreen.storyboard */,
+				FA49F9452999031F004C0CBF /* Assembly.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -312,8 +326,10 @@
 				FA49F943299819F6004C0CBF /* UIViewController + Ext.swift in Sources */,
 				FA49F92E29964AF2004C0CBF /* STTraineeBottomStack.swift in Sources */,
 				FA49F92129954747004C0CBF /* STTraineeTopStackView.swift in Sources */,
+				FA49F94829990360004C0CBF /* STMainPresenter.swift in Sources */,
 				FA49F91929950958004C0CBF /* STButton.swift in Sources */,
 				FAE4169B2994F0FA000484E3 /* STInfinityHorizontalCollectionView.swift in Sources */,
+				FA49F9462999031F004C0CBF /* Assembly.swift in Sources */,
 				FA49F9372996E104004C0CBF /* STText.swift in Sources */,
 				FA49F93329965DBA004C0CBF /* STFrameConstants.swift in Sources */,
 				FAE4168E2994142A000484E3 /* STLabel.swift in Sources */,

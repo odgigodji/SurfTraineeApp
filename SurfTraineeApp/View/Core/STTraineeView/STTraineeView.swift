@@ -44,4 +44,10 @@ final class STTraineeView: UIView {
             bottomStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
         ])
     }
+    
+    //MARK: - Set
+    func set(traineeDirections: [String]) {
+        topStackView.set(traineeDirections: traineeDirections)
+        bottomStackView.set(traineeDirections: traineeDirections)
+    }
 }

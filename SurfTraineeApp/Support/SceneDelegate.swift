@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    let assembly = STMainAssembly()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
@@ -17,15 +18,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.windowScene = windowScene
         
-//        assembly.createMainPresenter()
-        
-//        window?.rootViewController = assembly.view
+        assembly.createMainPresenter()
+        window?.rootViewController = assembly.view
 //        let nc = UINavigationController(rootViewController: STMainViewController())
         
-        window?.rootViewController = STMainViewController()
+//        window?.rootViewController = STMainViewController()
         window?.makeKeyAndVisible()
     }
-
-
 }
 

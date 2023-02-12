@@ -13,10 +13,13 @@ protocol ShowAlertProtocol: AnyObject {
 
 final class STMainViewController: UIViewController {
     
-    private var imageView       = UIImageView(image: UIImage(named: "background"))
-    private var scrollView      = UIScrollView()
-    private var contentView     = STTraineeView(frame: .zero)
-    private var bottomStackView = STMainBottomStackView()
+    private var imageView           = UIImageView(image: UIImage(named: "background"))
+    private var scrollView          = UIScrollView()
+    private var contentView         = STTraineeView(frame: .zero)
+    private var bottomStackView     = STMainBottomStackView()
+    private var traineeDirections   = [String]()
+    
+    var output: STMainPresenterOutput!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,8 @@ final class STMainViewController: UIViewController {
         
         configureImageView()
         configureScrollView()
+        
+        setupTraineeDirections()
         configureContentView()
         
         configureBottomStackView()
@@ -76,6 +81,7 @@ final class STMainViewController: UIViewController {
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.heightAnchor.constraint(equalToConstant: view.frame.height)
         ])
+        contentView.set(traineeDirections: traineeDirections)
     }
     
     private func configureBottomStackView() {
@@ -109,5 +115,11 @@ final class STMainViewController: UIViewController {
 extension STMainViewController: ShowAlertProtocol {
     func showSuccessAlert() {
         self.presentAlertOnMainThread(title: "Поздравляем!", message: "Ваша заявка успешно отправлена!", buttonTitle: "Закрыть")
+    }
+}
+
+extension STMainViewController: STMainPresenterInput {
+    func setupTraineeDirections() {
+        traineeDirections = output.getTraineeDirection()
     }
 }

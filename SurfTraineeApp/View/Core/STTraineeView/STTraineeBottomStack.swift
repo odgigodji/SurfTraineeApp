@@ -38,4 +38,9 @@ final class STTraineeBottomStack: UIStackView {
             twoRowCollectionView.heightAnchor.constraint(equalToConstant: heightConstant)
         ])
     }
+    
+    //MARK: - Set
+    func set(traineeDirections: [String]) {
+        twoRowCollectionView.set(traineeDirections: traineeDirections)
+    }
 }

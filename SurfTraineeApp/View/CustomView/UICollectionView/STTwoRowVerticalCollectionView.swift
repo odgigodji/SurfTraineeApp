@@ -14,7 +14,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     //MARK: - test buttons
     var cells = [STButton]()
     
-    var viewModel: STCollectionViewModelProtocol = STCollectionViewModel()
+//    var viewModel: STCollectionViewModelProtocol = STCollectionViewModel()
     
     init() {
         let layout = STLeftAlignedCollectionViewFlowLayout()
@@ -59,10 +59,12 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: STFrameConstants.heightOfCollectionViewCell)
     }
     
+    func set(traineeDirections: [String]) {
+        cells =  createButtons(with: traineeDirections)
+    }
+    
     //MARK: - Configure
     private func configureCollectionView() {
-        cells = viewModel.createButtonsWithTraineeDirections()
-        
         translatesAutoresizingMaskIntoConstraints   = false
         showsHorizontalScrollIndicator              = false
         backgroundColor                             = .white
@@ -70,6 +72,12 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         delegate                                    = self
         dataSource                                  = self
         register(STCollectionViewCell.self, forCellWithReuseIdentifier: STCollectionViewCell.id)
+    }
+    
+    //MARK: - Helpers
+    private func createButtons(with traineeDirections: [String]) -> [STButton] {
+        let buttons = traineeDirections.map { STButton(title: $0) }
+        return buttons
     }
 }
 
