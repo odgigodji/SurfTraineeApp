@@ -60,7 +60,7 @@ final class STMainViewController: UIViewController {
         scrollView.showsVerticalScrollIndicator                 = false
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 50),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
@@ -72,10 +72,10 @@ final class STMainViewController: UIViewController {
         contentView.backgroundColor                             = .white
         contentView.layer.cornerRadius                          = 32
         
+//        let topAnchorPadding = view.frame.height / 1.8
         NSLayoutConstraint.activate([
             
             //FIXME: - constant
-            
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 450),
             
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
@@ -110,7 +110,6 @@ final class STMainViewController: UIViewController {
             self.bottomStackView.alpha = 1.0
         }
     }
-    
 }
 
 extension STMainViewController: ShowAlertProtocol {
