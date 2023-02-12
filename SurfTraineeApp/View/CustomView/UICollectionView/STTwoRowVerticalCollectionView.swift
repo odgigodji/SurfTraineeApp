@@ -20,8 +20,8 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         let layout = STLeftAlignedCollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 12
         layout.minimumLineSpacing = 12
-
         super.init(frame: .zero, collectionViewLayout: layout)
+        
         configureCollectionView()
     }
     
@@ -37,7 +37,6 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: STCollectionViewCell.id, for: indexPath) as! STCollectionViewCell
         
-        
         let button = cells[indexPath.row]
         cell.configure(button: button)
         return cell
@@ -49,18 +48,18 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         cells[indexPath.row].didPress()
     }
     
     
-    //MARK: - Private
+    //MARK: - Set
     private func calculateSizeOfCell(indexPath: IndexPath) -> CGSize {
         let size = cells[indexPath.row].frame.size
         let width = size.width + STFrameConstants.widthPadding
         return CGSize(width: width, height: STFrameConstants.heightOfCollectionViewCell)
     }
     
+    //MARK: - Configure
     private func configureCollectionView() {
         cells = viewModel.createButtonsWithTraineeDirections()
         

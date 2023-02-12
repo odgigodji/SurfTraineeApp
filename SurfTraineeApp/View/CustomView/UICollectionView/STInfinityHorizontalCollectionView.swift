@@ -24,8 +24,8 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         let layout                      = UICollectionViewFlowLayout()
         layout.scrollDirection          = .horizontal
         layout.minimumInteritemSpacing  = 12
-        
         super.init(frame: .zero, collectionViewLayout: layout)
+        
         configureCollectionView()
     }
     
@@ -42,10 +42,10 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell    = dequeueReusableCell(withReuseIdentifier: STCollectionViewCell.id, for: indexPath) as! STCollectionViewCell
         
+        returnElemFromEdgeIfNeeded(indexPath: indexPath)
+        
         let button = cells[indexPath.row % cells.count]
         cell.configure(button: button)
-        returnElemFromEdgeToMiddle(indexPath: indexPath)
-        
         return cell
     }
     
@@ -82,7 +82,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         scrollToItem(at: indexPath, at: .left, animated: animated)
     }
     
-    private func returnElemFromEdgeToMiddle(indexPath: IndexPath) {
+    private func returnElemFromEdgeIfNeeded(indexPath: IndexPath) {
         if indexPath.row == 0 || indexPath.row == numberOfCells - 1 {
             moveElemToLeftBorder(indexPath: IndexPath(row: middlePosition,  section: 0), animated: false)
         }
