@@ -76,6 +76,9 @@ final class STInfinityHorizontalCollectionView: UICollectionView, UICollectionVi
     
     
     //MARK: - Set
+    
+    /// create array of buttons to view on cells
+    /// - Parameter traineeDirections: array of string with trainee directions
     func set(traineeDirections: [String]) {
         cells = traineeDirections.isEmpty ? [STButton()] : createButtons(with: traineeDirections)
     }
@@ -86,12 +89,18 @@ final class STInfinityHorizontalCollectionView: UICollectionView, UICollectionVi
         scrollToItem(at: indexPath, at: .left, animated: animated)
     }
     
+    
+    /// When we scroll to left or right edge - go to middle elem
+    /// - Parameter indexPath: check if last or first elem
     private func returnElemFromEdgeIfNeeded(indexPath: IndexPath) {
         if indexPath.row == 0 || indexPath.row == numberOfCells - 1 {
             moveElemToLeftBorder(indexPath: IndexPath(row: middlePosition,  section: 0), animated: false)
         }
     }
     
+    
+    /// If buttons in array with equal title - press its all
+    /// - Parameter row: position of button compare with
     private func didPressAllRepeatedButtons(to row: Int) {
         for cell in cells {
             if cell.titleLabel?.text == cells[row].titleLabel?.text {
@@ -101,6 +110,10 @@ final class STInfinityHorizontalCollectionView: UICollectionView, UICollectionVi
         }
     }
     
+    
+    /// Create buttons for cells in InfinityCollectionView, If count of Strings less than needed - add Strings to array and create array of buttons
+    /// - Parameter traineeDirections:input array of Stirngs
+    /// - Returns: created array of buttons
     private func createButtons(with traineeDirections: [String]) -> [STButton] {
         var traineeDirections = traineeDirections
         if traineeDirections.count < minCountOfCollectionViewCells {
@@ -110,6 +123,10 @@ final class STInfinityHorizontalCollectionView: UICollectionView, UICollectionVi
         return buttons
     }
     
+    
+    /// check if count of strings >= minimum count of cells. (That needed for reusable cells in my implimintation of infinity scroll view)
+    /// - Parameter arrayOfString: array for check
+    /// - Returns: modified array
     private func modifyArrayOfStringToPossibleCount(_ arrayOfString: [String]) -> [String] {
         var modifiedArray = arrayOfString
         for _ in 0...minCountOfCollectionViewCells {
