@@ -63,7 +63,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     //MARK: - Configure
     private func configureCollectionView() {
         translatesAutoresizingMaskIntoConstraints   = false
-        showsHorizontalScrollIndicator              = false
+        showsVerticalScrollIndicator                = false
         backgroundColor                             = .white
         
         delegate                                    = self
