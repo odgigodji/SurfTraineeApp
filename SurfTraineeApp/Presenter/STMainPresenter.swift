@@ -13,7 +13,7 @@ protocol STMainPresenterOutput: AnyObject {
 
 
 protocol STMainPresenterInput: AnyObject {
-    func setupTraineeDirections()
+    func setTraineeDirections()
 }
 
 

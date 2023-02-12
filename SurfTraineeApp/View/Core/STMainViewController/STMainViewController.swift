@@ -28,7 +28,7 @@ final class STMainViewController: UIViewController {
         configureImageView()
         configureScrollView()
         
-        setupTraineeDirections()
+        setTraineeDirections()
         configureContentView()
         
         configureBottomStackView()
@@ -140,7 +140,7 @@ extension STMainViewController: ShowAlertProtocol {
 }
 
 extension STMainViewController: STMainPresenterInput {
-    func setupTraineeDirections() {
+    func setTraineeDirections() {
         traineeDirections = output.getTraineeDirection()
     }
 }
