@@ -5,15 +5,13 @@
 //  Created by Nikita Evdokimov on 11.02.23.
 //
 
-import UIKit
+import Foundation
 
 
 final class STInfinityCollectionViewModel: STCollectionViewModelProtocol {
-    var dataManager = DataManagerImpl()
     
-    var minCountOfCollectionViewCells : Int  {
-        UIDevice.current.userInterfaceIdiom == .pad ? 16 : 8
-    }
+    private var dataManager : DataManager           = DataManagerImpl()
+    private var minCountOfCollectionViewCells : Int = 16
     
     func createButtonsWithTraineeDirections() -> [STButton] {
         var traineeDirections = dataManager.getTraineeDirections()

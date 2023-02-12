@@ -10,10 +10,10 @@ import UIKit
 
 final class STMainBottomStackView: UIStackView {
     
-    weak var delegate: STMainViewController?
-    
     private var sendAnApplicationButton = STButton(type: .big, title: "Отправить заявку")
-    private var label = STLabel(text: "Xочешь к нам?", font: STFonts.regular14, textColor: .gray)
+    private var label                   = STLabel(text: "Xочешь к нам?", font: STFonts.regular14, textColor: .gray)
+    
+    weak var delegate: ShowAlertProtocol?
     
     override init(frame: CGRect) {
         super.init(frame: frame)

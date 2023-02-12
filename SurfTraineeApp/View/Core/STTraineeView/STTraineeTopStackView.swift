@@ -9,10 +9,9 @@ import UIKit
 
 final class STTraineeTopStackView: UIStackView {
     
-    var topLabel = STLabel(text: STText.mainTitle, font: STFonts.bold24, textColor: .black)
-    var middleLabel = STLabel(text: STText.secondary1, font: STFonts.regular14, textColor: .gray)
-    
-    private var collectionView = STInfinityHorizontalCollectionView()
+    private let topLabel        = STLabel(text: STText.mainTitle, font: STFonts.bold24, textColor: .black)
+    private let middleLabel     = STLabel(text: STText.secondary1, font: STFonts.regular14, textColor: .gray)
+    private let collectionView  = STInfinityHorizontalCollectionView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,7 +25,7 @@ final class STTraineeTopStackView: UIStackView {
     }
     
     
-    //MARK: - Private
+    //MARK: - Configure
     private func configureStackView() {
         axis            = .vertical
         distribution    = .fillProportionally

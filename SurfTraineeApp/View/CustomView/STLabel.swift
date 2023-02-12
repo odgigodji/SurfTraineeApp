@@ -7,7 +7,8 @@
 
 import UIKit
 
-class STLabel: UILabel {
+/// custom Labels uses in application
+final class STLabel: UILabel {
 
     override init(frame: CGRect) {
         super.init(frame: frame)

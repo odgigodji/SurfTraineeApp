@@ -11,8 +11,8 @@ import UIKit
 /// Content View
 final class STTraineeView: UIView {
 
-    var topStackView = STTraineeTopStackView()
-    var bottomStackView = STTraineeBottomStack()
+    private let topStackView    = STTraineeTopStackView()
+    private let bottomStackView = STTraineeBottomStack()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,8 +28,7 @@ final class STTraineeView: UIView {
     }
     
     
-    //MARK: - Private
-
+    //MARK: - Configure
     private func configureTopStackView() {
         NSLayoutConstraint.activate([
             topStackView.topAnchor.constraint(equalTo: topAnchor, constant: 24),

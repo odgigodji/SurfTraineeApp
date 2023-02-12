@@ -7,15 +7,15 @@
 
 import UIKit
 
-protocol ShowAlertProtocol {
+protocol ShowAlertProtocol: AnyObject {
     func showSuccessAlert()
 }
 
 final class STMainViewController: UIViewController {
     
-    private var imageView   = UIImageView(image: UIImage(named: "background"))
-    private var scrollView  = UIScrollView()
-    private var contentView = STTraineeView(frame: .zero)
+    private var imageView       = UIImageView(image: UIImage(named: "background"))
+    private var scrollView      = UIScrollView()
+    private var contentView     = STTraineeView(frame: .zero)
     private var bottomStackView = STMainBottomStackView()
     
     override func viewDidLoad() {
@@ -30,7 +30,6 @@ final class STMainViewController: UIViewController {
         configureBottomStackView()
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         prepareAnimation()
@@ -41,9 +40,8 @@ final class STMainViewController: UIViewController {
         startAnimattion()
     }
     
-    //MARK: - Private
     
-    //MARK: - Configure Layout
+    //MARK: - Configure
     private func configureImageView() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -69,15 +67,11 @@ final class STMainViewController: UIViewController {
     
     private func configureContentView() {
         scrollView.addSubview(contentView)
-        contentView.backgroundColor                             = .white
-        contentView.layer.cornerRadius                          = 32
+        contentView.backgroundColor     = .white
+        contentView.layer.cornerRadius  = 32
         
-//        let topAnchorPadding = view.frame.height / 1.8
         NSLayoutConstraint.activate([
-            
-            //FIXME: - constant
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 450),
-            
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.heightAnchor.constraint(equalToConstant: view.frame.height)
@@ -98,8 +92,8 @@ final class STMainViewController: UIViewController {
     
     //MARK: - Animations
     private func prepareAnimation() {
-        self.contentView.alpha = 0.0
-        self.bottomStackView.alpha = 0.0
+        self.contentView.alpha      = 0.0
+        self.bottomStackView.alpha  = 0.0
     }
     
     private func startAnimattion() {

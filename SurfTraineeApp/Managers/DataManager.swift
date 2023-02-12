@@ -11,9 +11,8 @@ protocol DataManager {
     func getTraineeDirections() -> [String]
 }
 
-
 /// Imitation of Data Manager
-class DataManagerImpl: DataManager {
+final class DataManagerImpl: DataManager {
     
     func getTraineeDirections() -> [String] {
         

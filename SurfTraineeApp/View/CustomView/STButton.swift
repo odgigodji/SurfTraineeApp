@@ -7,15 +7,13 @@
 
 import UIKit
 
-
 /// custom Button uses in application
-class STButton: UIButton {
+final class STButton: UIButton {
     
     private var isPressed = false
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         translatesAutoresizingMaskIntoConstraints = false
     }
     
@@ -25,9 +23,7 @@ class STButton: UIButton {
     
     convenience init(type: STButtonType = .regular, title: String) {
         self.init(frame: .zero)
-        
-        let modifiedTitle = title
-        setTitle(modifiedTitle, for: .normal)
+        setTitle(title, for: .normal)
         
         switch type {
         case .big:
@@ -37,13 +33,12 @@ class STButton: UIButton {
         }
     }
 
-    func didPressed() {
+    //MARK: - Action
+    func didPress() {
         isPressed = !isPressed
         didPressStateChanged()
     }
-
     
-    //MARK: - Private
     private func didPressStateChanged() {
         if isPressed {
             backgroundColor = STColors.coal
@@ -54,7 +49,7 @@ class STButton: UIButton {
         }
     }
     
-    /// Layout UI
+    // MARK: - Configuration
     private func configureBigButton() {
         titleLabel?.font = STFonts.medium16
         setTitleColor(.white, for: .normal)

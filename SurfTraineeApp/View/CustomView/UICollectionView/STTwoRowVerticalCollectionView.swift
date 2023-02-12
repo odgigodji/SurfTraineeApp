@@ -50,7 +50,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        cells[indexPath.row].didPressed()
+        cells[indexPath.row].didPress()
     }
     
     

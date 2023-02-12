@@ -21,10 +21,9 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var viewModel = STInfinityCollectionViewModel()
     
     init() {
-        let layout                                  = UICollectionViewFlowLayout()
-        layout.scrollDirection                      = .horizontal
-        layout.minimumLineSpacing                   = 12
-        layout.minimumInteritemSpacing              = 12
+        let layout                      = UICollectionViewFlowLayout()
+        layout.scrollDirection          = .horizontal
+        layout.minimumInteritemSpacing  = 12
         
         super.init(frame: .zero, collectionViewLayout: layout)
         configureCollectionView()
@@ -35,8 +34,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     }
 
     
-    //MARK: - UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
-    
+    //MARK: - Delegate, DataSource, DelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return numberOfCells
     }
@@ -62,22 +60,11 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         
         let actualRow = indexPath.row % cells.count
         
-        didPressedAllEqualButtons(to: actualRow)
+        didPressAllEqualButtons(to: actualRow)
         moveElemToLeftBorder(indexPath: IndexPath(item: indexPath.row, section: 0), animated: true)
     }
     
-    
-    //MARK: - Private
-    private func moveElemToLeftBorder(indexPath: IndexPath, animated: Bool) {
-        scrollToItem(at: indexPath, at: .left, animated: animated)
-    }
-    
-    private func returnElemFromEdgeToMiddle(indexPath: IndexPath) {
-        if indexPath.row == 0 || indexPath.row == numberOfCells - 1 {
-            moveElemToLeftBorder(indexPath: IndexPath(row: middlePosition,  section: 0), animated: false)
-        }
-    }
-    
+    //MARK: - Configuration
     private func configureCollectionView() {
         cells                                       = viewModel.createButtonsWithTraineeDirections()
         
@@ -90,12 +77,23 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         register(STCollectionViewCell.self, forCellWithReuseIdentifier: STCollectionViewCell.id)
     }
     
-    private func didPressedAllEqualButtons(to row: Int) {
+    //MARK: - Helpers
+    private func moveElemToLeftBorder(indexPath: IndexPath, animated: Bool) {
+        scrollToItem(at: indexPath, at: .left, animated: animated)
+    }
+    
+    private func returnElemFromEdgeToMiddle(indexPath: IndexPath) {
+        if indexPath.row == 0 || indexPath.row == numberOfCells - 1 {
+            moveElemToLeftBorder(indexPath: IndexPath(row: middlePosition,  section: 0), animated: false)
+        }
+    }
+    
+    private func didPressAllEqualButtons(to row: Int) {
         for cell in cells {
             if cell.titleLabel?.text == cells[row].titleLabel?.text {
-                cell.didPressed()
+                cell.didPress()
             }
-            cells[row].didPressed()
+            cells[row].didPress()
         }
     }
 }

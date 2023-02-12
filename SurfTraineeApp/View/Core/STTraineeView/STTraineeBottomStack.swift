@@ -9,8 +9,8 @@ import UIKit
 
 final class STTraineeBottomStack: UIStackView {
     
-    var label = STLabel(text: STText.secondary2, font: STFonts.regular14, textColor: .gray)
-    private var twoRowCollectionView = STTwoRowVerticalCollectionView()
+    private let label                   = STLabel(text: STText.secondary2, font: STFonts.regular14, textColor: .gray)
+    private var twoRowCollectionView    = STTwoRowVerticalCollectionView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,7 +24,7 @@ final class STTraineeBottomStack: UIStackView {
     }
     
     
-    //MARK: - Private
+    //MARK: - Configure
     private func configureStackView() {
         axis            = .vertical
         distribution    = .fillProportionally
@@ -34,7 +34,6 @@ final class STTraineeBottomStack: UIStackView {
         addArrangedSubview(twoRowCollectionView)
         
         let heightConstant = STFrameConstants.heightOfCollectionViewCell * 2 + 13
-        
         NSLayoutConstraint.activate([
             twoRowCollectionView.heightAnchor.constraint(equalToConstant: heightConstant)
         ])

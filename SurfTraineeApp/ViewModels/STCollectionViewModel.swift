@@ -9,7 +9,7 @@ import UIKit
 
 
 final class STCollectionViewModel: STCollectionViewModelProtocol {
-    var dataManager = DataManagerImpl()
+    private var dataManager = DataManagerImpl()
     
     func createButtonsWithTraineeDirections() -> [STButton] {
         let traineeDirections = dataManager.getTraineeDirections()

@@ -9,9 +9,8 @@ import UIKit
 
 class STCollectionViewCell: UICollectionViewCell {
     
-    var button : STButton?
-    
     static let id = "STCollectionViewCell"
+    var button : STButton?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
