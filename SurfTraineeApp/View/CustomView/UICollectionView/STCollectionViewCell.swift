@@ -22,7 +22,6 @@ class STCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(button: UIButton) {
-//        guard let button = button else { return }
         addSubview(button)
         
         NSLayoutConstraint.activate([

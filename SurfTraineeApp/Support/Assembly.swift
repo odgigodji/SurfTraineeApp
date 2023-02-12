@@ -19,5 +19,4 @@ class STMainAssembly {
         presenter.view              = view
         presenter.dataManager       = dataManager
     }
-    
 }

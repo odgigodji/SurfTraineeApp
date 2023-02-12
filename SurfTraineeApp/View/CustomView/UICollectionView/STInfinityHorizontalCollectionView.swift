@@ -7,7 +7,7 @@
 
 import UIKit
 
-//протокол перезентера под коллекшн вью
+
 final class STInfinityHorizontalCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     private var cells = [STButton]()
@@ -41,9 +41,8 @@ final class STInfinityHorizontalCollectionView: UICollectionView, UICollectionVi
         let cell    = dequeueReusableCell(withReuseIdentifier: STCollectionViewCell.id, for: indexPath) as! STCollectionViewCell
         
         returnElemFromEdgeIfNeeded(indexPath: indexPath)
+        cell.configure(button: cells[indexPath.row % cells.count])
         
-        let button = cells[indexPath.row % cells.count]
-        cell.configure(button: button)
         return cell
     }
     
@@ -51,6 +50,7 @@ final class STInfinityHorizontalCollectionView: UICollectionView, UICollectionVi
         
         let size    = cells[indexPath.row % cells.count].frame.size
         let width   = size.width + STFrameConstants.widthPadding
+        
         return CGSize(width: width, height: STFrameConstants.heightOfCollectionViewCell)
     }
     
@@ -58,17 +58,13 @@ final class STInfinityHorizontalCollectionView: UICollectionView, UICollectionVi
         
         let actualRow = indexPath.row % cells.count
         
-        didPressAllEqualButtons(to: actualRow)
+        didPressAllRepeatedButtons(to: actualRow)
         moveElemToLeftBorder(indexPath: IndexPath(item: indexPath.row, section: 0), animated: true)
     }
     
+    
     //MARK: - Configuration
     private func configureCollectionView() {
-//        cells                                       = viewModel.createButtonsWithTraineeDirections()
-//        cells = output.createButtonsWithTraineeDirections()
-//        updateInfinityCollectionView()
-        
-        
         translatesAutoresizingMaskIntoConstraints   = false
         showsHorizontalScrollIndicator              = false
         backgroundColor                             = .white
@@ -77,6 +73,13 @@ final class STInfinityHorizontalCollectionView: UICollectionView, UICollectionVi
         dataSource                                  = self
         register(STCollectionViewCell.self, forCellWithReuseIdentifier: STCollectionViewCell.id)
     }
+    
+    
+    //MARK: - Set
+    func set(traineeDirections: [String]) {
+        cells = traineeDirections.isEmpty ? [STButton()] : createButtons(with: traineeDirections)
+    }
+    
     
     //MARK: - Helpers
     private func moveElemToLeftBorder(indexPath: IndexPath, animated: Bool) {
@@ -89,7 +92,7 @@ final class STInfinityHorizontalCollectionView: UICollectionView, UICollectionVi
         }
     }
     
-    private func didPressAllEqualButtons(to row: Int) {
+    private func didPressAllRepeatedButtons(to row: Int) {
         for cell in cells {
             if cell.titleLabel?.text == cells[row].titleLabel?.text {
                 cell.didPress()
@@ -115,11 +118,4 @@ final class STInfinityHorizontalCollectionView: UICollectionView, UICollectionVi
         }
         return modifiedArray
     }
-    
-    //MARK: - Set
-    func set(traineeDirections: [String]) {
-        cells = traineeDirections.isEmpty ? [STButton()] : createButtons(with: traineeDirections)
-    }
 }
-
-

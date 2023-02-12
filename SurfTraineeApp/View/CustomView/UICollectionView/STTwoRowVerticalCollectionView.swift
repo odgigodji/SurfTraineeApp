@@ -14,8 +14,6 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     //MARK: - test buttons
     var cells = [STButton]()
     
-//    var viewModel: STCollectionViewModelProtocol = STCollectionViewModel()
-    
     init() {
         let layout = STLeftAlignedCollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 12
@@ -37,8 +35,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: STCollectionViewCell.id, for: indexPath) as! STCollectionViewCell
         
-        let button = cells[indexPath.row]
-        cell.configure(button: button)
+        cell.configure(button: cells[indexPath.row])
         return cell
     }
     

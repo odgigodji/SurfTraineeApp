@@ -17,7 +17,7 @@ protocol STMainPresenterInput: AnyObject {
 }
 
 
-class STMainPresenter: STMainPresenterOutput {
+final class STMainPresenter: STMainPresenterOutput {
    
     weak var view: STMainPresenterInput!
     weak var collecitonView: STMainPresenterInput!
